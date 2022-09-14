@@ -1,0 +1,64 @@
+
+
+ Question 1: Explain difference between PriorityQueue() and LinkedList().
+ 
+ Answer) PriortiyQueue as well as Linkedlist implement the Queue Interface and perform operations same the way as a queue (FIFO). The difference 
+         between PriorityQueue and Linkedlist is at the time of insertion PriorityQueue will be sorted as well as ordered as per the natural order 
+         but we can add a comparator also in order to define the particular order of sorting for a record, while as LinkedList will be just 
+         ordered. So while you are trying to add elements in PriorityQueue, they will get sorted on the basis of their natural order or as per the 
+         comparator function.
+         
+         Example of PriortiyQueue:- 
+         
+         
+         import java.util.*;
+  
+	class Main {
+	    
+	    public static void main(String args[])
+	    {
+	        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+	  
+	        pq.add(10);
+	        pq.add(20);
+	        pq.add(15);
+	  
+	        System.out.println(pq.peek());
+	        System.out.println(pq.poll());
+	        System.out.println(pq.peek());
+	    }
+	}
+	
+	
+	   
+	      Example of LinkedList:-
+	      
+	      
+	      import java.util.*;
+ 
+	 class Main {
+	 
+	    
+	    public static void main(String args[])
+	    {
+	      
+	        LinkedList<String> ll = new LinkedList<String>();
+	 
+	        ll.add("A");
+	        ll.add("B");
+	        ll.addLast("C");
+	        ll.addFirst("D");
+	        ll.add(2, "E");
+	 
+	        System.out.println(ll);
+	 
+	        ll.remove("B");
+	        ll.remove(3);
+	        ll.removeFirst();
+	        ll.removeLast();
+	 
+	        System.out.println(ll);
+	    }
+	}
+
+

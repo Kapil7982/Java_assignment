@@ -1,0 +1,41 @@
+package evaluation;
+
+import java.util.Scanner;
+
+import secondquestion.Ticket;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner in = new Scanner(System.in);
+		
+		System.out.println("Enter Number of Students you want to enter:");
+		int noOfStudent = in.nextInt();
+		
+		Student [] arr = new Student[noOfStudent];
+		
+		for(int i=0; i<arr.length; i++)
+		{
+		System.out.println("Enter the Roll Number :");
+		int stdentRollNo = in.nextInt();
+		
+		System.out.println("Enter the Name");
+		String studentName = in.nextLine();
+		
+		System.out.println("Enter the marks :");
+		String stdentMarks = in.nextLine();
+		
+		Student s1 = new Student();
+		
+		s1.setRollNumber(stdentRollNo);
+		s1.setStudentName(studentName);
+		s1.setMarks(stdentMarks);
+		
+		
+		}
+
+	}
+
+}

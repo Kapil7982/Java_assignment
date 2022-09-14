@@ -1,0 +1,65 @@
+
+
+ Q2) What is the difference between ArrayList and Array?
+ 
+ Answer) 
+          Array:- An array is a dynamically-created object. It serves as a container that holds the constant number of values of the same type. 
+          It has a contiguous memory location. Once an array is created, we cannot change its size. 
+          
+          
+          1. Array is static in size.
+          2. It is mandatory to provide the size of an array while initializing it directly or indirectly.
+          3. It performs fast in comparison to ArrayList because of fixed size.
+          4. An array can store both objects and primitives type.
+          5. We use for loop or for each loop to iterate over an array.
+          6. We cannot use generics along with array because it is not a convertible type of array.
+          7. We can add elements in an array by using the assignment operator.
+          8. Array can be multi-dimensional.
+          
+          Example:- 
+          
+          
+           int array[]=new int[size]; // Here we are creating an array of specified size. When we try to add more than its size, it throws 
+           ArrayIndexOutOfBoundsException. Like
+           
+           int arr[]=new int[3];  
+			 
+			arr[0]=12;  
+			arr[1]=2;  
+			arr[2]=15;  
+			arr[3]=67
+          
+          
+          ArrayList :- In simple words ArrayList is class of collections framework. It contains popular classes like Vector, HashTable, and HashMap.
+          
+          
+          1. ArrayList is dynamic in size.
+          2. We can create an instance of ArrayList without specifying its size. Java creates ArrayList of default size.
+          3. ArrayList is internally backed by the array in Java. The resize operation in ArrayList slows down the performance.
+          4. We cannot store primitive type in ArrayList. It automatically converts primitive type to object.
+          5. We use an iterator to iterate over ArrayList.
+          6. ArrayList allows us to store only generic/ type, that's why it is type-safe.
+          7. Java provides the add() method to add elements in the ArrayList.
+          8. ArrayList is always single-dimensional.
+          
+          
+           Example:- 
+           
+           
+          public class ArrayExample  { 
+           
+				public static void main(String args) {  
+				   
+				    int arr[]=new int[4];  
+			
+					arr[0]=12;  
+					arr[1]=2;  
+					arr[2]=15;  
+					arr[3]=67;
+					  
+				for(int i=0;i<arr.length;i++)  
+				{  
+				    System.out.println(arr[i]);  
+				}  
+			}  
+}  

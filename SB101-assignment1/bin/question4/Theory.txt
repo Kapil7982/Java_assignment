@@ -1,0 +1,78 @@
+
+
+ Question 4: Explain Generics in Java and Its Importance with example.
+ 
+ Answer) Generics means parameterized types. The idea is to allow type (Integer, String, … etc., and user-defined types) to be a parameter to 
+         methods, classes, and interfaces. Using Generics, it is possible to create classes that work with different data types. An entity such as
+         class, interface, or method that operates on a parameterized type is a generic entity.
+         
+         Advantages of Generics:- 
+         
+         1. Type-safety:- We can hold only a single type of objects in generic. It doesn't allow to store other objects. 
+         2. Type casting is not required:- There is no need to typecast the object. Before Generics, we need to type cast.
+         3. Compile-Time Checking:- It is checked at compile time so problem will not occur at runtime. The good programming strategy says it is 
+            far better to handle the problem at compile time than runtime.
+            
+            
+            
+          Types of Generics:-
+          
+          1. Generic method:- Generic Java method takes a parameter and returns some value after performing a task. It is exactly like a normal 
+                              function, however, a generic method has type parameters that are cited by actual type. This allows the generic method
+                              to be used in a more general way. The compiler takes care of the type of safety which enables programmers to code 
+                              easily since they do not have to perform long, individual type castings.
+          
+          2. Generic classes:- A generic class is implemented exactly like a non-generic class. The only difference is that it contains a type 
+                               parameter section. There can be more than one type of parameter, separated by a comma. The classes, which accept 
+                               one or more parameters, ​are known as parameterized classes or parameterized types.
+                               
+                               
+           Example of Generic method:- 
+           
+           
+           
+         class Main {
+           
+	    static <T> void display(T t)
+	    {
+	        System.out.println(ty.getClass().getName() + " ===== " + t);
+	    }
+	  
+	    public static void main(String[] args)
+	    {
+	        
+	        display(11);
+	        display("Name");
+	        display(1.0);
+	    }
+	}
+	
+	
+	        Example of Generic classes:- 
+	        
+	        
+	      class Test<T> {
+	    
+	    T obj;
+	    Test(T obj) 
+	    { 
+	        this.obj = obj; 
+	    } 
+	    public T getObject() 
+	    {
+	        return this.obj; 
+	    }
+	}
+	  
+	class Main {
+	    public static void main(String[] args)
+	    {
+	      
+	        Test<Integer> iObj = new Test<Integer>(15);
+	        System.out.println(iObj.getObject());
+	  
+	        Test<String> sObj
+	            = new Test<String>("Name");
+	        System.out.println(sObj.getObject());
+	    }
+	}

@@ -1,0 +1,21 @@
+1. Explain Type casting and its types with examples?
+
+Ans) Typecast is a way of changing an object from one data type to the next. It is used in computer programming to ensure a function handles the variables correctly.
+ A typecast example is the transformation of an integer into a string.
+ 
+2. Explain the difference between local and instance variables?
+
+Ans)
+     Instance Variable:- 
+ i) They are defined in class but outside the body of methods.  
+ ii) It can be accessed throughout the class.
+ iii) These variables are given a default value if it is not assigned by code.
+ iv) It is not compulsory to initialize instance variables before use.  
+ v) It includes access modifiers such as private, public, protected, etc.  
+ 
+     Local Variable :-
+  i) They are defined as a type of variable declared within programming blocks or subroutines. 
+  ii) Its access is limited to the method in which it is declared.
+  iii) These variables do not always have some value, so there must be a value assigned by code.
+  iv) It is important to initialize local variables before use.
+  v) It does not include any access modifiers such as private, public, protected, etc.

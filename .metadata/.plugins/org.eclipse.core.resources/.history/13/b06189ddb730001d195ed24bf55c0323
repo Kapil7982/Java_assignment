@@ -1,0 +1,28 @@
+package question2;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 List < String > l = new ArrayList <String> ((aStr,bStr) -> bStr.compareTo(aStr));
+		 
+		 l.add("Delhi");
+		 l.add("Chandigarh");
+		 l.add("Mehrauli");
+		 l.add("Haryana");
+		 l.add("Luckhnow");
+		 l.add("Cheenai");
+		 l.add("Ambala");
+		 
+	       
+
+	    }
+	
+
+}

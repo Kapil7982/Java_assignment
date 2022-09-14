@@ -1,0 +1,16 @@
+package question3;
+
+public class CardPayment {
+
+	private int amount;
+
+	public CardPayment(int amount) {
+		super();
+		this.amount = amount;
+	}
+	
+	private void doPayment() {
+		// TODO Auto-generated method stub
+        System.out.println("Payment done using Card "+amount);
+	}
+}

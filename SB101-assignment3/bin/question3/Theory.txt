@@ -1,0 +1,44 @@
+
+
+ Q3) What is exception handling in java, Write the hierarchy of Exception class and, Mention someof the predefined Exception classes at least 5, 
+     and the reason when those exception class object is generated in our application.
+     
+ Answer)  Exception Handling:- Exception Handling in Java is one of the effective means to handle the runtime errors so that the regular flow of 
+                               the application can be preserved. Java Exception Handling is a mechanism to handle runtime errors such as 
+                               ClassNotFoundException, IOException, SQLException, RemoteException, etc.
+                               
+          Exception Hierarchy:- All exception and error types are subclasses of class Throwable, which is the base class of the hierarchy. One 
+                                branch is headed by Exception. This class is used for exceptional conditions that user programs should catch. 
+                                NullPointerException is an example of such an exception. Another branch, Error is used by the Java run-time 
+                                system to indicate errors having to do with the run-time environment itself.
+                               
+                               Object
+			                     |
+		                     Throwable
+                                                            
+           -------------------------------------------------------------------
+           |					                                             |
+       Exception 				                                           Error
+           |
+     RuntimeException
+     
+     
+             
+             Predefined Exception in Java:- 
+             
+             1. ArthmeticException
+             2. ClassCastException
+             3. ClassNotFoundException
+             4. FileNotFoundException
+             5. NullPointerException
+             
+             
+             
+             Major reason why an Exception occurs:- 
+             
+             1. Physical limitations like out of disk memory
+             2. Code errors
+             3. Opening an unavailable file
+             4. Invalid user input  
+             5. Device failure 
+             6. Loss of network connection 

@@ -1,0 +1,23 @@
+package question1;
+
+public class Tiger extends Animal {
+
+	@Override
+	public void eat() throws AnimalException {
+		System.out.println("Tiger is eating!!");
+		
+	}
+
+	public static void main(String[] args) {
+		
+		Animal a = new Tiger();
+		
+	try {
+			a.eat();
+		} 
+		catch (AnimalException e) 
+		{
+			e.printStackTrace();
+		}
+	}
+}

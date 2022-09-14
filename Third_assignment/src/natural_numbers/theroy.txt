@@ -1,0 +1,68 @@
+    
+    
+    
+  Question 1.)  Define Wrapper Classes in Java.
+  
+  
+  Answer)  The wrapper class in Java provides the mechanism to convert primitive into object and object into primitive.
+  Java is an object-oriented programming language, so we need to deal with objects many times like in Collections, Serialization, Synchronization, etc. Let us see the different scenarios, where we need to use the wrapper classes.
+
+1. Change the value in Method: Java supports only call by value. So, if we pass a primitive value, it will not change the original value. 
+But, if we convert the primitive value in an object, it will change the original value.
+
+2. Serialization: We need to convert the objects into streams to perform the serialization. 
+If we have a primitive value, we can convert it in objects through the wrapper classes.
+
+3. Synchronization: Java synchronization works with objects in Multithreading.
+
+4. java.util package: The java.util package provides the utility classes to deal with objects.
+
+ The eight classes of the java.lang package are known as wrapper classes in Java. 
+ 
+         Primitive Type	            Wrapper class
+         boolean                 	Boolean
+         char	                    Character
+         byte	                    Byte
+         short	                    Short
+         int	                    Integer
+         long	                    Long
+         float	                    Float
+         double	                    Double
+ 
+ 
+  Wrapper to Primitive
+ 
+  Integer a=new Integer(3);    
+  int i=a.intValue();
+  int j=a;
+  
+  Primitive to Wrapper
+  int a=20;  
+  Integer i=Integer.valueOf(a);
+  Integer j=a
+ 
+ -----------------------------------------------------------------------------------------------------------------
+ 
+ 
+ Question 4.)  Explain why the following block of code will give a compile time error?
+
+ 
+			 public class Main {
+				public static void main(String[] args) {
+				float f=3.3;
+				System.out.println(f);
+				}
+				}
+				
+ Answer)		 
+         It's giving the complie time error because the value which is defined in the floot is always double
+         till we don't difined it into that so for the correction the given code is correct:-
+         
+         public class Main {
+				public static void main(String[] args) {
+				float f=(float)3.3;  // or float f = 3.3f;
+				System.out.println(f);
+				}
+				}
+         
+ 

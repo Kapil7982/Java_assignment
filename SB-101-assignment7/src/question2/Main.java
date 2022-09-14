@@ -1,0 +1,30 @@
+package question2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<Student> list = new ArrayList<>();
+		
+		list.add(new Student(1, "Mohit", "mohit@gmail.com", 450));
+		list.add(new Student(2, "Roshan", "roshan@gmail.com", 760));
+		list.add(new Student(3, "Lala", "lala@gmail.com", 230));
+		list.add(new Student(4, "Rocky", "rocky@gmail.com", 800));
+		list.add(new Student(5, "Sanju", "sanju@gmail.com", 500));
+		
+		Student maxStudent= list
+				.stream()
+				.max((s1,s2) -> s1.getMarks() > s2.getMarks() ? +1: -1)
+				.get();
+		
+		
+		
+		System.out.println(maxStudent);
+	   
+	}
+
+}

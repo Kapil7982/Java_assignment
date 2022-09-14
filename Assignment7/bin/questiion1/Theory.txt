@@ -1,0 +1,38 @@
+Q1)  Is there any difference between creating a string with and without a new operator? Explain with an example.
+
+Answer) Both expressions give you a String object, but there is a subtle difference between them. 
+        When you create a String object using the new() operator, it always creates a new object 
+        in heap memory. At a high level both are String objects, but the main difference comes from 
+        the point that the new() operator always creates a new String object. Also when you create 
+        String using literal they are interned. This will be much more clear when you compare two 
+        String objects created using String literal and new operator.
+        
+        
+        Example:- 
+        
+        String a = "Mohit";
+        String b = "Mohit";
+        System.out.println(a == b); // True
+        
+        
+        Here two different object are created and they have different reference.
+
+        String a = new String("Mohit");
+        String b = new String("Mohit");
+        System.out.println(a == b); // False
+
+
+        When you compare a string literal with a String object created using new() operator using == operator,
+        it will return false.
+        
+        
+        String a = "Mohit";
+        String b = new String("Mohit");
+        System.out.println(a == b); // False
+
+
+       Most recommended way is to by string literal because it is easier to read and it gives the compiler
+        a chance to optimize your code
+
+
+

@@ -1,0 +1,6 @@
+package question6;
+
+public class Child extends Parent {
+
+	
+}

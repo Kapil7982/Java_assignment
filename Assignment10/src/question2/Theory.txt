@@ -1,0 +1,85 @@
+
+
+  Q3) What is the use of ‘this’ and ‘super’ keywords in java ? Explain with an example.
+  
+  Answer) 
+  
+          "this" keyword:- In java "this" keyword used to access method of the current class.
+          
+          uses of the "this" keyword:- 
+         
+         1. It use to refer instance variable of the current class.
+         2. To invoke or initiate current class constructor.
+         3. Can be passed as an argument in the method call.
+         4. Can be passed as an argument in the constructor call.
+         5. Can be used to return the current class instance.
+         
+         
+         example:--
+         
+         class check 
+         {
+			    int a = 10;
+			    static int b = 20;
+ 
+    void checkMethod()
+    {
+        
+        this.a = 100;
+        System.out.println(a)
+        this.b = 600;
+ 
+        System.out.println(b);
+    }
+ 
+    public static void main(String[] args)
+    {
+       
+        new check().checkMethod();
+    }
+}
+         
+         
+         "super" keyword:- In java "super" keyword used to access method of the parent class.
+         
+         uses of the "super" keyword:-
+         
+         1. It can be used to refer immediate parent class instance variable
+         2. It can be used to refer immediate parent class method
+         3. It can be used to refer immediate parent class constructor.
+         4. super keyword in java programming language refers to the superclass of the class where the super keyword is currently being used.
+         5. The most common use of super keyword is that it eliminates the confusion between the superclasses and subclasses that have methods
+            with same name.
+            
+            
+            example:--
+            
+            
+            public class Parent
+             {
+
+				int a = 10;
+			    static int b = 20;
+
+ 
+				 public class Child extends Parent
+				 {
+				
+					
+					    void run()
+					    {
+					        System.out.println(super.a);
+					        System.out.println(super.b);
+					    }
+				 }
+
+ 
+				    public static void main(String[] args)
+				    {
+				        new Child().run();
+				    }
+          }
+            
+            
+            
+            

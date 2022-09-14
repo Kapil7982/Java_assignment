@@ -1,0 +1,42 @@
+package question1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+	
+public static void fun1(List<? extends Number> list) 
+{
+		
+		for(Number n1:list) 
+		{
+		
+			System.out.println(n1);
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	
+		 System.out.println("Array:");
+		  Scanner s = new Scanner(System.in);
+		  String line = s.nextLine();
+		  String[] nums = line.split(",");
+		  int[] result = new int[Integer.parseInt(nums[0])];
+		  for(int i = 0; i<result.length;i++){
+		    result[i]=Integer.parseInt(nums[i+1]);
+		  }
+		  for(int r:result){
+		    System.out.println(r);
+		  }
+		
+	
+		
+	}
+
+}

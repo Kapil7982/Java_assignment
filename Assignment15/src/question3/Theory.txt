@@ -1,0 +1,34 @@
+
+
+ Q3) Explain the difference between equals() and HashCode() Method.
+ 
+ Answer)  The key difference between equals and hashCode in Java is that the equals is used to compare two objects while the hashCode is used in 
+          hashing to decide which group an object should be categorized into.
+          
+          
+         equals():- The equals method is used to compare two objects. The default equals method is defined in the object class. That implementation
+                    is similar to the == operator. The two object references are equal only if they are pointing to the same object. It is possible
+                    to override the equals method.
+                    
+         1. equals is a method in Java that acts similar to the == operator, which is to test for object identity rather than object equality.
+         2. The method equals is used to compare two objects.
+                    
+                    
+         HashCode():- The hashCode is used in hashing to decide to which group an object should be categorized into. A group of objects can share 
+                      the same hashCode. A correct hashing function can evenly distribute objects into different groups.
+
+                      A correct hashCode can have properties as follows. Suppose that there are two objects as obj1 and obj2. If obj1.equals(obj2) 
+                      is true, then the obj1.hashCode() is equal to obj2.hashCode(). If obj1.equals(obj2) is false, it is not necessary that 
+                      obj1.hashCode() is not equal to obj2.hashCode(). The two unequal object might also have the same hashCode.
+                      
+         1. hashCode is a method by which a class implicitly or explicitly break down the data stored in an instance of the class into a single 
+            hash value.
+         2. The method is used in hashing to decide which group an object should be placed into.
+         
+                      
+                      
+                      
+          
+          
+          
+          

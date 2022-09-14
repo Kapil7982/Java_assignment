@@ -1,0 +1,37 @@
+package question5;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<Product> p = new ArrayList();
+		
+		p.add(new Product(1, "Jeans", 2,2000));
+		p.add(new Product(2, "Shirt", 4,1600));
+		p.add(new Product(3, "T-shirt", 6,1800));
+		p.add(new Product(4, "Shorts", 2,1000));
+		p.add(new Product(5, "Cap", 6,300));
+		
+		for(Product item:p) {
+			   System.out.println(item);
+		   }
+		
+		
+		System.out.println("===================================================");
+		
+		Collections.sort(p,(s,s1)-> s.getPrice() > s1.getPrice() ? -1 : 1 );
+		
+		for(Product item:p) {
+			   System.out.println(item);
+		   }
+		  //p.forEach(System.out::println);
+		
+		
+	}
+
+}

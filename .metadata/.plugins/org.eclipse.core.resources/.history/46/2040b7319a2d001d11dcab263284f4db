@@ -1,0 +1,53 @@
+package question4;
+
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+
+
+
+public class Main {
+	
+	public  Map<Student,String> sortMapUsingEmployeeSalary(Map<Student,String> originalMap)
+    {
+
+        List<Map.Entry<Student,String>> linkList = new LinkedList<>(originalMap.entrySet());
+
+        Collections.sort(linkList, (a, b) -> {
+            return a.getKey().getMarks() > b.getKey().getMarks() ? -1 : 1;
+        });
+
+        Map<Student, String> sortedMap = new LinkedHashMap<>();
+
+        linkList.forEach(x -> sortedMap.put(x.getKey(), x.getValue()));
+
+        return sortedMap;
+    }
+
+    public static void main(String[] args) {
+
+        Map<Student,String> hm = new HashMap<>();
+
+        hm.put(new Student(5, "Mohit", 845),"Haryana");
+        hm.put(new Student(4, "Lihit", 758),"Utter Pardesh");
+        hm.put(new Student(3, "Rohit", 1000),"Mumbai");
+        hm.put(new Student(2, "Sohit", 499),"Tamil Nadu");
+        hm.put(new Student(1, "Hit", 583),"Bihar");
+
+        Main main = new Main();
+
+        Map<Student, String> sorted = main.sortMapUsingEmployeeSalary(hm);
+
+
+        for(Entry<Student, String> emp : sorted.entrySet()) {
+            
+            System.out.println(emp.getValue().toString()+ " , "+ emp.getKey());
+        }
+    }
+
+}

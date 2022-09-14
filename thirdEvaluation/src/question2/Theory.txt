@@ -1,0 +1,51 @@
+
+
+ Question 2) Briefly explain the difference between Early and Late Binding with examples.
+ Answer)  
+            Early Binding:-  The binding can be resolve at compile time by the compiler is called Early Binding.
+            
+            1. It is a compile time process.
+            2. The method definition and the method call are linked during the compile time.
+            3. Object is not used for binding.
+            4. Method overloading program execution is faster.
+            
+		           class Dog
+		           {  
+						private void eat(){System.out.println("Inside dog class..");
+					 
+							  
+							 public static void main(String args[])
+							 {  
+								  Dog d1=new Dog();  
+								  d1.eat();  
+	                         }  
+}  
+            
+            
+            Late Binding:- In the late binding the compiler doesn't decide the method to be called. overriding is better example of Late Binding.
+            
+            1. It is a run time process.
+            2. The method definition and the method call are linked during the run time.
+            3. Actual Object is used for binding.
+            4. Method overloading program execution is slower.
+            
+            
+            
+            class Animal
+            {  
+               void eat(){System.out.println("Inside Animal class...");
+            
+  
+				class Dog extends Animal
+				{  
+				 void eat(){System.out.println("Child of Animal..."); 
+				  
+				 public static void main(String args[]){  
+				  Animal a=new Dog();  
+				  a.eat();  
+                }  
+          }  
+
+
+
+

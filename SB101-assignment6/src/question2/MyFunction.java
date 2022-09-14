@@ -1,0 +1,24 @@
+package question2;
+
+import java.util.function.Function;
+
+public class MyFunction {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		    Function<Integer,String> f = i -> "It's  a number "+i;
+		    System.out.println(f.apply(50));
+		    
+		    Function<String,Integer> f2 = s -> Integer.parseInt(s);
+		    System.out.println(f2.apply("500")+500);
+		    
+		    Function<String,Integer> f3 = Integer::parseInt;
+		    System.out.println(f3.apply("1000")+200);
+	}
+
+}
+
+
+//A Function interface is more of a generic one that takes one argument and produces a result. This has a Single Abstract Method (SAM) apply which 
+//accepts an argument of a type T and produces a result of type R. One of the common use cases of this interface is Stream.map method.

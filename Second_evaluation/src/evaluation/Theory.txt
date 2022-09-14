@@ -1,0 +1,65 @@
+ Q1) a) Why String is immutable in java and what is the difference between String and String Builder? And Write
+some of the methods of String class at least 5 with example.
+
+Answer) String is immutable in java because of the security, synchronization and class loading. The reason of making the 
+        string final is to destroy the immutability and not allow anyone to extend it. The string object are cached in the 
+        string pool and it makes the string immutable.
+        
+        Difference between string and stringBuilder:-
+        
+        1. Mutability :-  A string is immutable in java, while a stringBuilder is mutable in java. An immutable object is an object whose 
+                          content can't changed after it is created.
+        
+        2. Equality :- We can use equal() method for comparing two strings in java since the string class overrides the equal() method of the object
+                       class, while in stringBuilder doesn't allow override the equal() method. We cannot use equal() method to compare two string in 
+                       stringBuilder object.
+                       
+        3. Comparable :- In string class implements the comparable interface, while in stringBuilder doesn't because it doesn't provide any mechanism 
+                         for the string comparison.
+                         
+        4. Constructor :- In string we can create the string object without using a new operator which is not possible in stringBuilder.
+        
+        5. Performance :- StringBuilder is speedy and consume less memory while string is immutable to concatenate two string it involve to create new
+                          object.
+                          
+         Methods of string class:-  
+         
+         1. concat()
+         2. contains()
+         3. charAt()
+         4. valueOf()
+         5. replace()
+         6. compareTo()
+         
+         
+         
+         
+         
+  b) What is the difference between equals method and == operator in java? And what will be the output of the
+       following code snippets and giving proper explanation.
+       
+  Answer)   Both equals() method and == operators are use to compare two objects in java. Whenever we create an object using the operator new it will
+          create new memory location for the object. So we use the == operator to check memory location or address of the two objects are the same
+          or not. 
+        1.  The equals() method is a method and the == operator is not a method. 
+        2. equal() method evaluates the comparisons of the values in the objects, while == operator checks for the address.
+        
+        
+        Code snippet 1 >
+        
+        Answer) True, because the equals() method checks for the value of the object and the value of both objects are same that's why the output 
+                of the code is true.
+                
+         Code snippet 2 >  
+         
+        Answer) False, because stringBuilder is mutable and it create different objects every time that's why s1 is not equal to s2 hence the output 
+                is false.
+                
+        Code snippet 3 >
+        
+        Answer) False, because == operator is checks for the objects and the objects address are same but both objects are different that's why the 
+                output is false.
+            
+       
+         
+ 

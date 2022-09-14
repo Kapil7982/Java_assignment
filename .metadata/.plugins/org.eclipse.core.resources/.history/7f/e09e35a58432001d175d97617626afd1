@@ -1,0 +1,30 @@
+package question3;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<Student> list = Arrays.asList(
+				new Student(1, "Rahul",450,"Bendra Street Mumbai"),
+				new Student(1, "Rohit",580,"Goa Dao Street Mumbai"),
+				new Student(1, "Mohan",470,"Capital Street of New York"),
+				new Student(1, "Lala",640,"Game of Right Mumbai"),
+				new Student(1, "Sachin",530,"Don'n Know Address")
+				);
+				 
+		
+		Collections.sort(list,(a,b) -> a.getMarks()>b.getMarks() ? 1 : -1);
+
+        list.stream().map( (idd) ->new Employee(idd.getRoll(), idd.getName(),idd.getMarks()*10000,"Gas") ).
+                forEach(item -> System.out.println(item));
+		
+		
+		    
+	}
+
+}

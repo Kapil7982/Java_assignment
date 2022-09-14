@@ -1,0 +1,10 @@
+
+
+ Q2) Why multiple Inheritance is not supported in Java at the class Level?
+ 
+ Answer) Because, It is just to remove the ambiguity , because multiple inheritance can cause ambiguity around Diamond problem in few scenarios.
+         For example, if you have two parent classes, they might have different implementations of the same feature — or possibly two different 
+         features with the same name. Then you have to deal with deciding which one your subclass is going to use. There are ways of handling this,
+         but the designers of Java felt that multiple inheritance causes more problems and confusion than it solves. So they avoid multiple 
+         inheritance from the Java language.
+  

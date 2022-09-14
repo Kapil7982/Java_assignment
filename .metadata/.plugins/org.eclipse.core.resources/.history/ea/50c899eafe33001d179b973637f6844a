@@ -1,0 +1,48 @@
+package question5;
+
+import java.util.Scanner;
+
+public class Main {
+
+	
+	public static Employee getEmployeeDetails()
+	{
+		Employee e1 = new Employee(101, "Mohit", 20000, 18400);
+		return e1;
+		
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Employee e2 = new Employee();
+		
+		Scanner sc = new Scanner(System.in);
+		
+		
+		System.out.println("Enter Id:");
+		e2.setEmployeeId(sc.nextInt());
+		
+		
+		System.out.println("Enter Name:");
+		e2.setEmployeeName(sc.next());
+		
+		
+		System.out.println("Enter Salary:");
+		e2.setSalary(sc.nextDouble());
+		
+		System.out.println("Enter PF percentage:");
+		e2.calculateNetSalary(sc.nextInt());
+		
+		
+		System.out.println("Id:" +e2.getEmployeeId());
+		System.out.println("Name:" +e2.getEmployeeName());
+		System.out.println("Salary:" +e2.getSalary());
+		System.out.println("Net Salary:" +e2.getNetSalary());
+		
+		
+
+		
+		
+	}
+
+}

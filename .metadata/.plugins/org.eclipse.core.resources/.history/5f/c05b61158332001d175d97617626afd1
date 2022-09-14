@@ -1,0 +1,39 @@
+package question4;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<String> list =  Arrays.asList("Rohit" , "Mohit" ,"Lala", "Gopal", "Sagar", "Rita", "Uma", "Laila", "John","Bhola");
+		
+		
+//		list.forEach((e) -> {
+//			  System.out.print(e + ", ");
+//			});
+		
+	 list.stream()
+		    .filter(s -> s.length()%2 ==0)
+		    .forEach(s ->s.toUpperCase());
+		
+		
+		Collections.sort(list, (s,s1) -> s1.compareTo(s));
+		System.out.println("Decender Order :"  +list);
+		
+//		list.forEach((e) -> {
+//			  System.out.print(e + ", ");
+//			});
+//		
+		
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package question2;
+
+import java.util.function.Supplier;
+
+public class MySupplier {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Supplier<String> supplier= ()-> "Mohit";
+		  System.out.println(supplier.get());
+	}
+
+}
+
+
+//A Supplier is a simple interface which indicates that this implementation is a supplier of results. Thisinterface, however, does not enforce any
+//restrictions that supplier implementation needs to return a different result on each invocation.The supplier has only one method get() and does
+//not have any other default and static methods.

@@ -1,0 +1,43 @@
+package evaluation;
+
+public class Student {
+
+	private int rollNumber;
+	private String studentName;
+	private String marks;
+	
+	public int getRollNumber() {
+		return rollNumber;
+	}
+	public void setRollNumber(int rollNumber) {
+		this.rollNumber = rollNumber;
+	}
+	public String getStudentName() {
+		return studentName;
+	}
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
+	}
+	public String getMarks() {
+		return marks;
+	}
+	public void setMarks(String marks) {
+		this.marks = marks;
+	}
+	
+	public Student() {
+		
+	}
+	
+	public Student(int rollNumber, String studentName, String marks)
+	{
+		this.rollNumber = rollNumber;
+		this.studentName = studentName;
+		this.marks = marks;
+		
+	}
+	
+	
+	
+	
+}

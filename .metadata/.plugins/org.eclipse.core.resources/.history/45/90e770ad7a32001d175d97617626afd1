@@ -1,0 +1,13 @@
+package question2;
+
+import java.util.function.Predicate;
+
+public class MyPridicate implements Predicate<Student>{
+
+	@Override
+	public boolean test(Student s) {
+		 
+		return s.getMarks() < 500;
+	}
+
+}

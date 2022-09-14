@@ -1,0 +1,18 @@
+package question4;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PrintList pl= city -> System.out.println(city);
+		
+		
+		
+		List<String> city = Arrays.asList("madhepur","sultanpur","patna","aajamgarh","manipur");
+		pl.display(city);
+	}
+
+}

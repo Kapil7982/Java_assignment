@@ -1,0 +1,45 @@
+
+
+Q4) Explain the difference between overloading and overriding methods with an example?
+  
+Answer) Method Overloading :-  
+        
+        Method Overloading is an example of Compile time polymorphism.  In this, more than one method of the same class shares the same method name
+        having different signatures. Method overloading is used to add more to the behavior of methods and there is no need of more than one class
+        for method overloading.
+        
+        
+        
+         Method Overriding :- 
+            
+         Method overriding is an example of run time polymorphism. In this, the specific implementation of the method that is already provided by 
+         the parent class is provided by the child class. It is used to change the behavior of existing methods and there is a need for at least 
+         two classes for method overriding. In method overriding, inheritance always required as it is done between parent class(superclass) and 
+         child class(child class) methods.  
+  
+  
+  
+  
+  
+  
+  
+                    Method Overloading                                                         Method Overriding
+          
+   1.     In the method overloading, methods or functions                            In the method overriding, methods or functions must
+          must have the same name and different signatures.                          have the same name and same signatures.
+          
+   2.     Method overloading is a example of compile time polymorphism.              Method overriding is a example of run time polymorphism.
+  
+   3.     In the method overloading, inheritance may or may not be required.         In method overriding, inheritance always required.
+   
+   4.     Method overloading is performed between methods within the class.          Method overriding is done between parent class and child 
+                                                                                     class methods.
+   
+   5.     It is used in order to add more to the behavior of methods.                It is used in order to change the behavior of 
+                                                                                     exist methods.
+   
+   6.     In method overloading, there is no need of more than one class.            In method overriding, there is need of at least of two classes
+   
+   
+   
+   

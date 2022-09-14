@@ -1,0 +1,35 @@
+package question1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+	
+public static void fun1(List<? extends Number> list) 
+{
+		
+		for(Number n1:list) 
+		{
+		
+			System.out.println(n1);
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		Scanner reader = new Scanner(System.in); 
+        ArrayList<String> memory = new ArrayList<String>(); 
+         
+        while(true) 
+        { 
+            memory.add(reader.nextLine()); 
+            System.out.println(memory.toString()); 
+        } 
+	}
+
+}

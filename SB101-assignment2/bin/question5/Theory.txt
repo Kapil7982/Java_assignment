@@ -1,0 +1,74 @@
+
+
+ Q5) Explain Difference between Upper Bounded Wildcards and Lower Bounded Wildcards with Example.
+ 
+ Answer)   Upper Bounded Wildcards:- 
+ 
+           These wildcards can be used when you want to relax the restrictions on a variable. For example, say you want to write a method that 
+           works on List < Integer >, List < Double >, and List < Number >, you can do this using an upper bounded wildcard.To declare an 
+           upper-bounded wildcard, use the wildcard character (‘?’), followed by the extends keyword, followed by its upper bound. 
+           
+           
+           Example:-  
+           
+           import java.util.Arrays;
+		   import java.util.List;
+		 
+		class UpperBoundedWildcard {
+		
+		    public static void main(String[] args)
+		    {
+		        List<Integer> list1 = Arrays.asList(4, 5, 6, 7);
+		 
+		        System.out.println("Total sum is:" + sum(list1));
+		 
+		        List<Double> list2 = Arrays.asList(4.1, 5.1, 6.1);
+		 
+		        System.out.print("Total sum is:" + sum(list2));
+		    }
+		 
+		    private static double sum(List<? extends Number> list)
+		    {
+		        double sum = 0.0;
+		        for (Number i : list) {
+		            sum += i.doubleValue();
+		        }
+		 
+		        return sum;
+		    }
+		}
+		
+		
+		    Lower Bounded Wildcards:- 
+		    
+		    It is expressed using the wildcard character (‘?’), followed by the super keyword, followed by its lower bound: <? super A>. 
+		    
+		    
+		    Example:- 
+		    
+		    import java.util.Arrays;
+		    import java.util.List;
+		 
+		class LowerBoundedWildcard {
+		    public static void main(String[] args)
+		    {
+		        List<Integer> list1 = Arrays.asList(4, 5, 6, 7);
+		 
+		        printOnlyIntegerClassorSuperClass(list1);
+		
+		        List<Number> list2 = Arrays.asList(4, 5, 6, 7);
+		 
+		        printOnlyIntegerClassorSuperClass(list2);
+		    }
+		 
+		    public static void printOnlyIntegerClassorSuperClass(
+		        List<? super Integer> list)
+		    {
+		        System.out.println(list);
+		    }
+		}
+		    
+		    
+		    The major difference between the Upper Bounded Wildcards and Lower Bounded Wildcards is Upper-bound is when you specify 
+		    (? extends Field) means argument can be any Field or subclass of Field. Lower-bound is when you specify (? super Field) means argument 
+		    can be any Field or superclass of Field.

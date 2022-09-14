@@ -1,0 +1,27 @@
+package question3;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		List<Student> list = Arrays.asList(
+				new Student(1, "Rahul",500,"Bendra Street Mumbai"),
+				new Student(1, "Rahul",500,"Bendra Street Mumbai"),
+				new Student(1, "Rahul",500,"Bendra Street Mumbai"),
+				new Student(1, "Rahul",500,"Bendra Street Mumbai"),
+				new Student(1, "Rahul",500,"Bendra Street Mumbai")
+				);
+				 
+		
+		Collections.sort(list,(a,b) -> a.getMarks()>b.getMarks() ? 1: -1);
+		
+		
+		    
+	}
+
+}

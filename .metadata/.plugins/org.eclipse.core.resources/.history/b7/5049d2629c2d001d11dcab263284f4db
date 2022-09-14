@@ -1,0 +1,44 @@
+package question1;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Scanner;
+
+public class Main {
+	
+public static void fun1(List<? extends Number> list) 
+{
+		
+		for(Number n1:list) 
+		{
+		
+			System.out.println(n1);
+		}
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+	
+		Scanner input = new Scanner(System.in);
+
+	    System.out.println("Insert the first series of numbers: ");
+	    String number1 = input.nextLine();
+	    System.out.println("Insert the second series of numbers: ");
+	    String number2 = input.nextLine();
+
+	    String[] items = number1.split(" ");
+	    String[] items2 = number2.split (" ");
+
+	    List<String> itemList = new ArrayList<String>(Arrays.asList(items));
+	    itemList.remove(0);
+	    Collections.sort(itemList);
+	    System.out.println(itemList);
+	
+		
+	}
+
+}

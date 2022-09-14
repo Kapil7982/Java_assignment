@@ -1,0 +1,29 @@
+
+
+ Q2) Explain about Hashcode and Equals Method.
+ 
+ Answer) Equals and Hashcode method are two important methods in java provided by the object class for comparing the objects. Since the objects 
+         class is the parent class of all java objects hence all the objects are inherit the default implementation of those two methods.
+         
+         
+         equals():- 
+         
+         1. The euqals() method in java is belong to java.lang.Object class, and it is used to compare two objects.
+         2. To compare two objects that it whether they are same or not it compares the value of the both the objects attributes.
+         3. By default two objects will be the same only if stored in the same memory location.
+         4. Syntax :- public boolean equals(Objects obj)
+         
+         
+         Hashcode():- 
+         
+         1. The hascode() method isa a interger value associated with every object in java facilitating the hashing in hash tables.
+         2. To get his hashcode value for an object we can use the hashcode() method in java. It is means hashCode() method return the integer 
+            hashcode value of the given object.
+            
+         3. Since this method is defined in the object clss, hence it is inherited by user defined classes also.
+         4. The hashcode() method return the same hash value when called on two objects. Which are equals according to the equals() method. And if 
+             the objects are unequal return different hash values.
+             
+         5 Syntax :- public int hashCode()
+         
+         

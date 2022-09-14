@@ -1,0 +1,38 @@
+package question2;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		 List < Employee > employees = new ArrayList < Employee > ();
+	        employees.add(new Employee(10, "Ramesh", 30));
+	        employees.add(new Employee(20, "Santosh", 29));
+	        employees.add(new Employee(30, "Sanjay", 30));
+	        employees.add(new Employee(40, "Pramod", 29));
+
+	        Collections.sort(employees, new Comparator < Employee > () {
+	            @Override
+	            public int compare(Employee o1, Employee o2) {
+	                return (int)(o1.getName().compareTo(o2.getName()));
+	            }
+	        });
+
+	        // using lambda expression
+	        // ascending order
+	        Collections.sort(employees, (o1, o2) -> (o1.getName().compareTo(o2.getName())));
+	        System.out.println("Ascending order => " + employees);
+	        // descending order
+	        Collections.sort(employees, (o1, o2) -> (o2.getName().compareTo(o1.getName())));
+	        System.out.println("Descending order => " + employees);
+	        // using Comparator.comparing() method
+	        Collections.sort(employees, Comparator.comparing(Employee::getName));
+	    }
+	
+
+}

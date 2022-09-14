@@ -1,0 +1,42 @@
+
+
+ Q3) Explain the difference between abstract class and interface.
+ 
+ Answer) Both abstract and interface used to achieve abstraction where we declare the abstract methods. Abstract class and interface both can't be
+         instantiated.
+         
+         Abstract class:- 
+         
+         1. Abstract class doesn't support multiple inheritance.
+         2. Abstract class can have final, non-final, static and non-static variables.
+         3. Abstract keyword used to declare abstract class.
+         4. An abstract class can extend another Java class and implement multiple Java interfaces.
+         5. Abstract class can be extended using "extends" keyword.
+         6. A java abstract class can have class members like private, protected etc.
+         7. Abstract class can provide the implementation of interface.
+         
+         Example:- 
+         
+         
+         public abstract class Shape
+         {
+			public abstract void draw();
+		 }
+        
+        
+         Interface:-  
+         
+         1. Interface support multiple inheritance.
+         2. Interface have only final and static variables.
+         3. The "interface" keyword is used to declare interface.
+         4. An interface can extend another java interface only.
+         5. An interface can be implemented using keyword "implements".
+         6. Members of java interface are public by default.
+         7. Interface can't provide the implementation of abstract class.
+         
+         Example:- 
+         
+         public interface Drawable
+         {
+			void draw();
+		 }
