@@ -1,0 +1,134 @@
+
+
+
+       select * from department;
++-----+-----------+----------+
+| did | dname     | location |
++-----+-----------+----------+
+|  12 | Account   | Delhi    |
+|  13 | Sales     | Gujrat   |
+|  14 | Marketing | Mumbai   |
+|  15 | HR        | Chennai  |
++-----+-----------+----------+
+
+
+mysql> select * from employee;
++-------+--------+----------+------------+--------+-------+
+| empid | ename  | address  | mobile     | salary | deptid |
++-------+--------+----------+------------+--------+-------+
+|  1000 | Rahul  | Banglore | 7896059468 |  20000 |    12 |
+|  1001 | Amit   | Delhi    | 889655468  |  30000 |    12 |
+|  1003 | Mohit  | Goa      | 9896577858 |  40000 |    13 |
+|  1004 | Lopez  | Pune     | 7896577858 |  50000 |    13 |
+|  1005 | Joy    | Haryana  | 696059468  |  50000 |    13 |
+|  1006 | Chatur | Vizak    | 7796577858 |  60000 |    14 |
+|  1007 | Rancho | Gurugram | 9996577858 |  60000 |    14 |
+|  1008 | Virus  | Noida    | 989677858  |  70000 |    15 |
+|  1009 | Raju   | Uganda   | 59677858   |  80000 |    15 |
++-------+--------+----------+------------+--------+-------+
+
+  ● Establish a One-to-Many relationship between the Department and Employee table.
+  
+  Answer)  foreign key (depid) references department(did)
+  
+  ● Using SQL insert 4 Department records in the Department table(Account, Sales, Marketing, HR).
+  
+  Answer)  insert into department values(12, 'Account', 'Delhi');
+			Query OK, 1 row affected (0.01 sec)
+			
+			mysql> insert into department values(13, 'Sales', 'Gujrat');
+			Query OK, 1 row affected (0.00 sec)
+			
+			mysql> insert into department values(14, 'Marketing', 'Mumbai');
+			Query OK, 1 row affected (0.00 sec)
+			
+			mysql> insert into department values(15, 'HR', 'Chennai');
+			Query OK, 1 row affected (0.01 sec)
+			
+			mysql> select * from department;
+			+-----+-----------+----------+
+			| did | dname     | location |
+			+-----+-----------+----------+
+			|  12 | Account   | Delhi    |
+			|  13 | Sales     | Gujrat   |
+			|  14 | Marketing | Mumbai   |
+			|  15 | HR        | Chennai  |
+			+-----+-----------+----------+
+
+
+ ● Using SQL register 2 employees in Accounts Department
+ 
+ Answer)  insert into employee values(1000, 'Rahul', 'Banglore','7896059468',20000,12);
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into employee values(1001, 'Amit', 'Delhi','889655468',30000,12);
+Query OK, 1 row affected (0.01 sec)
+
+
+● Using SQL register 3 employees in Sales Department
+
+Answer) insert into employee values(1003, 'Mohit', 'Goa','9896577858',40000,13);
+Query OK, 1 row affected (0.00 sec)
+
+mysql> insert into employee values(1004, 'Lopez', 'Pune','7896577858',50000,13);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(1005, 'Joy', 'Haryana','696059468',50000,13);
+Query OK, 1 row affected (0.01 sec)
+
+● Using SQL register 2 employees in Marketing Department.
+Answer)  insert into employee values(1006, 'Chatur', 'Vizak','7796577858',60000,14);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(1007, 'Rancho', 'Gurugram','9996577858',60000,14);
+Query OK, 1 row affected (0.01 sec)
+
+
+● Using SQL register 2 employees in HR Department.
+Answer)   insert into employee values(1008, 'Virus', 'Noida','989677858',70000,15);
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into employee values(1009, 'Raju', 'Uganda','59677858',80000,15);
+
+
+
+● Write a SQL query to get the total salary of employees, department-wise.
+ 
+ Answer)  select deptid , sum(salary) from employee group by depid;
+				+-------+-------------+
+				| deptid | sum(salary) |
+				+-------+-------------+
+				|    12 |       50000 |
+				|    13 |      140000 |
+				|    14 |      120000 |
+				|    15 |      150000 |
+				+-------+-------------+
+				
+  ● Write a SQL query to get all the employee details who enrolled in the Sales department.
+  
+ Answer)  select empid,ename,address from employee where deptid = (select did from department where dname = 'sales');
+				+-------+-------+---------+
+				| empid | ename | address |
+				+-------+-------+---------+
+				|  1003 | Mohit | Goa     |
+				|  1004 | Lopez | Pune    |
+				|  1005 | Joy   | Haryana |
+				+-------+-------+---------+
+				
+  ● Write a SQL query to get the Department details for an employee based on the empId.
+  
+  Answer)  
+  
+  
+  
+  ● Write a SQL query to get the second highest salary paid employee from the Employee table.
+  Answer)  	  select * from employee where salary = (select max(salary) from employee where salary < (select max(salary) from employee));
+					+-------+-------+---------+-----------+--------+-------+
+					| empid | ename | address | mobile    | salary | deptid|
+					+-------+-------+---------+-----------+--------+-------+
+					|  1008 | Virus | Noida   | 989677858 |  70000 |    15 |
+					+-------+-------+---------+-----------+--------+-------+
+				
+   
+
+  

@@ -1,0 +1,11 @@
+
+
+ Q1.Explain the meaning of the deadlock in multithreaded application, when it can occur in multithreading applications.Write one example of 
+     deadlock.
+     
+ Answer) Deadlock is basically a situation in where two or more threads are blocked forever waiting for each other. Deadlock occurs when multiple 
+         threads need same locks but obtain them in a different order. In multithreadeing we get the deadlock condition because of synchronized 
+         keyword. 
+         
+         
+         

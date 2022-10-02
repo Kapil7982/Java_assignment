@@ -1,0 +1,89 @@
+
+
+ 1. Count the number of students of each department.
+  
+ Answer) SELECT branch, COUNT(*) FROM STUDENT GROUP BY branch;
+ 
+				+--------+----------+
+				| branch | COUNT(*) |
+				+--------+----------+
+				| CSE    |        2 |
+				| ETC    |        3 |
+				| EEE    |        1 |
+				| BME    |        1 |
+				+--------+----------+
+				
+ 2. Count the number of students of each department where the department name starts with ‘E’.
+ 
+ Answer) SELECT COUNT(*) FROM student WHERE branch LIKE 'E%';
+				+----------+
+				| COUNT(*) |
+				+----------+
+				|        4 |
+				+----------+
+				
+ 3. Add a field called MARKS to the table STUDENT which can hold a number upto 8 digit length.
+ 
+ Answer)  ALTER table student ADD MARKS int;
+Query OK, 0 rows affected (0.32 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM STUDENT;
+				+--------+--------+--------+---------+-------+
+				| NAME   | ROLLNO | BRANCH | CITY    | MARKS |
+				+--------+--------+--------+---------+-------+
+				| VIJAYA |    150 | CSE    | CHENNAI |  NULL |
+				| SITA   |    202 | ETC    | KOLKATA |  NULL |
+				| RAVI   |    300 | EEE    | DELHI   |  NULL |
+				| BASU   |    165 | ETC    | CHENNAI |  NULL |
+				| RASMI  |    107 | ETC    | RKL     |  NULL |
+				| KARAN  |    111 | CSE    | CTC     |  NULL |
+				| REKHA  |    117 | BME    | BBSR    |  NULL |
+				+--------+--------+--------+---------+-------+
+				
+ 4. Modify the field :”NAME” of the table STUDENT to hold a maximum of 25 character.
+ 
+ Answer)  ALTER table student MODIFY NAME varchar(25);
+Query OK, 0 rows affected (0.10 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc student;
+				+--------+-------------+------+-----+---------+-------+
+				| Field  | Type        | Null | Key | Default | Extra |
+				+--------+-------------+------+-----+---------+-------+
+				| NAME   | varchar(25) | YES  |     | NULL    |       |
+				| ROLLNO | int         | YES  |     | NULL    |       |
+				| BRANCH | varchar(20) | YES  |     | NULL    |       |
+				| CITY   | varchar(20) | YES  |     | NULL    |       |
+				| MARKS  | int         | YES  |     | NULL    |       |
+				+--------+-------------+------+-----+---------+-------+
+				
+ 5. Delete all rows from the table STUDENT where branch is ETC.
+ 
+ Answer)  DELETE FROM student WHERE BRANCH= 'ETC';
+Query OK, 3 rows affected (0.02 sec)
+
+mysql> SELECT * FROM STUDENT;
+				+--------+--------+--------+---------+-------+
+				| NAME   | ROLLNO | BRANCH | CITY    | MARKS |
+				+--------+--------+--------+---------+-------+
+				| VIJAYA |    150 | CSE    | CHENNAI |  NULL |
+				| RAVI   |    300 | EEE    | DELHI   |  NULL |
+				| KARAN  |    111 | CSE    | CTC     |  NULL |
+				| REKHA  |    117 | BME    | BBSR    |  NULL |
+				+--------+--------+--------+---------+-------+
+				
+ 6. Rename the table STUDENT to STUDINFORMATION.
+ 
+ Answer)  ALTER TABLE STUDENT RENAME TO STUDINFORMATION;
+Query OK, 0 rows affected (0.05 sec)
+
+ 7. Delete all the data part from the table STUDENT.
+ 
+ Answer)  delete from STUDINFORMATION;
+Query OK, 4 rows affected (0.04 sec)
+
+ 8. Destroy the table STUDENT.
+ 
+ Answer) DROP TABLE STUDINFORMATION;
+Query OK, 0 rows affected (0.09 sec)

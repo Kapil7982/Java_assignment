@@ -1,0 +1,451 @@
+
+
+ Q1. Create the table PROGRAMMER with the given information using SQL CREATE TABLE commands:
+	
+	mysql> create database assignment14;
+	
+	mysql> use assignment14;
+	Database changed
+	
+		mysql> CREATE TABLE programmer
+		    -> (
+		    ->     EmpNo NUMERIC(5) UNIQUE,
+		    ->     ProjId VARCHAR(5),
+		    ->     LastName VARCHAR(30) NOT NULL,
+		    ->     FirstName VARCHAR(30),
+		    ->     HireDate DATE,
+		    ->     Language VARCHAR(15),
+		    ->     TaskNo NUMERIC(2),
+		    ->     Privilege VARCHAR(25)
+		    -> );
+		
+		
+		mysql> desc programmer
+		    -> ;
+		+-----------+--------------+------+-----+---------+-------+
+		| Field     | Type         | Null | Key | Default | Extra |
+		+-----------+--------------+------+-----+---------+-------+
+		| EmpNo     | decimal(5,0) | YES  | UNI | NULL    |       |
+		| ProjId    | varchar(5)   | YES  |     | NULL    |       |
+		| LastName  | varchar(30)  | NO   |     | NULL    |       |
+		| FirstName | varchar(30)  | YES  |     | NULL    |       |
+		| HireDate  | date         | YES  |     | NULL    |       |
+		| Language  | varchar(15)  | YES  |     | NULL    |       |
+		| TaskNo    | decimal(2,0) | YES  |     | NULL    |       |
+		| Privilege | varchar(25)  | YES  |     | NULL    |       |
+		+-----------+--------------+------+-----+---------+-------+
+		
+	
+2.Insert the following data into the PROGRAMMER table
+	
+		mysql> INSERT INTO programmer(EmpNo,LastName,FirstName,HireDate,ProjId,Language,TaskNo,Privilege) VALUES
+		    ->     (201,'Gupta','Saurav','1995-01-01','NPR','VB',52,'Secret'),
+		    ->     (390,'Ghosh','Pinky','1993-01-05','KCW','Java',11,'Top Secret'),
+		    ->     (789,'Agarwal','Praveen','1998-08-31','Rnc','VB',11,'Secret'),
+		    ->     (134,'Chaudhury','Supriyo','1995-07-15','TIPPS','C++',52,'Secret'),
+		    ->     (896,'Jha','Ranjit','1997-06-15','KCW','Java',10,'Top Secret'),
+		    ->     (345,'John','Peter','1999-11-15','TIPPS','Java',52,''),
+		    ->     (563,'Anderson','Andy','1994-08-15','NITTS','C++',89,'confidential');
+	
+	
+3a. Saurav Gupta is assigned a different project with id NITTS and he would work with C++ now. 
+			Update this change in the PROGRAMMER table.
+			
+	mysql> update programmer set projid = 'NITTS' , language = 'c++' where firstname = 'saurav';
+	
+			
+b. Supriyo Chaudhury has resigned his job. Incorporate this in the table PROGRAMMER.
+		 
+	mysql> DELETE FROM PROGRAMMER
+	    -> WHERE LastName='Chaudhury' and FirstName='Supriyo';
+	
+c. The column TaskNo in the PROGRAMMER table is no longer needed. Delete the column.
+		 
+	mysql> select * from programmer;
+	+-------+--------+----------+-----------+------------+----------+--------+--------------+
+	| EmpNo | ProjId | LastName | FirstName | HireDate   | Language | TaskNo | Privilege    |
+	+-------+--------+----------+-----------+------------+----------+--------+--------------+
+	|   201 | NITTS  | Gupta    | Saurav    | 1995-01-01 | c++      |     52 | Secret       |
+	|   390 | KCW    | Ghosh    | Pinky     | 1993-01-05 | Java     |     11 | Top Secret   |
+	|   789 | Rnc    | Agarwal  | Praveen   | 1998-08-31 | VB       |     11 | Secret       |
+	|   896 | KCW    | Jha      | Ranjit    | 1997-06-15 | Java     |     10 | Top Secret   |
+	|   345 | TIPPS  | John     | Peter     | 1999-11-15 | Java     |     52 |              |
+	|   563 | NITTS  | Anderson | Andy      | 1994-08-15 | C++      |     89 | confidential |
+	+-------+--------+----------+-----------+------------+----------+--------+--------------+
+	
+	mysql> alter table programmer drop column TaskNo;
+	
+	
+	mysql> select * from programmer;
+	+-------+--------+----------+-----------+------------+----------+--------------+
+	| EmpNo | ProjId | LastName | FirstName | HireDate   | Language | Privilege    |
+	+-------+--------+----------+-----------+------------+----------+--------------+
+	|   201 | NITTS  | Gupta    | Saurav    | 1995-01-01 | c++      | Secret       |
+	|   390 | KCW    | Ghosh    | Pinky     | 1993-01-05 | Java     | Top Secret   |
+	|   789 | Rnc    | Agarwal  | Praveen   | 1998-08-31 | VB       | Secret       |
+	|   896 | KCW    | Jha      | Ranjit    | 1997-06-15 | Java     | Top Secret   |
+	|   345 | TIPPS  | John     | Peter     | 1999-11-15 | Java     |              |
+	|   563 | NITTS  | Anderson | Andy      | 1994-08-15 | C++      | confidential |
+	+-------+--------+----------+-----------+------------+----------+--------------+
+	
+	
+4. Create table Department
+	
+	mysql> create table Department
+	    -> (
+	    -> DeptNo int primary key ,
+	    -> Dname varchar(25) not null,
+	    -> loc varchar(25) not null
+	    -> );
+	
+	
+5. In DEPARTMENT table, increase the field width of DNAME from 20 to 50
+	
+	mysql> alter table department modify dname varchar(50);
+	
+	
+6. Insert the following data into the Department table
+	
+	mysql> insert into department values(10,'ACCOUNTS','NEWYORK');
+	
+	
+	mysql> insert into department values(20,'MARKETING','CHICAGO');
+	
+	
+	mysql> insert into department values(30,'SALES','ATLANTA');
+	
+	
+	mysql> insert into department values(40,'RESEARCH','OHIO');
+	
+7. Create table Employee
+	
+	mysql> create table Employee
+	    -> (
+	    -> EmpNo int primary key ,
+	    -> Ename varchar(20) not null,
+	    -> Job varchar(20) not null,
+	    -> Sal int not null,
+	    -> Hiredate date not null,
+	    -> Deptno int ,
+	    -> foreign key(deptno) references department(deptno),
+	    -> check(job='manager' or job='clerk' or job='president')
+	    -> );
+	
+	
+8. In EMPLOYEE table add a new attribute MGR(Manager ID) consisting 4 Characters.
+	
+	mysql> alter table employee add mgr varchar(4) ;
+	
+	
+9. Insert the following DATA into the Employee Table
+	
+	mysql> insert into employee values(700,'JAMES','CLERK',3000,'2005/05/06',10);
+	
+	
+	mysql> insert into employee values(7002,'MASON','PRESIDENT',10000,'2005/06/06',20);
+	
+	
+	mysql> insert into employee values(7003,'CLARK','MANAGER',5000,'2004/05/06',20);
+	
+	
+	mysql> insert into employee values(7004,'JOHN','MANAGER',6000,'2005/08/06',10);
+	
+	
+	mysql> insert into employee values(7005,'BLAKE','CLERK',3500,'2005/09/06',30);
+	
+	
+10. Create table Grade
+	
+		create table grade
+		(
+		gradeno int primary key,
+		hi_sal int not null,
+		lo_sal int not null
+		);
+	
+	
+11.Drop the column Lo_sal from Grade Table
+	
+	alter table grade drop column lo_sal ;
+	
+	
+12.Add column Low_sal in Grade table
+	
+	alter table grade add low_sal int ;
+	
+	
+13.Insert the following data into the table
+	
+	mysql> insert into grade values(1,2000,500);
+	
+	
+	mysql> insert into grade values(2,3500,2100);
+	
+	
+	mysql> insert into grade values(3,6000,3600);
+	
+	
+	mysql> insert into grade values(4,15000,6100);
+	
+	
+14.Create table EMPLOYEE_BACK from employee table 
+	
+	mysql> create table employee_back as select * from employee;
+	
+15.Increase the salary of JAMES from 3000 to 3500 
+	
+	mysql> update employee set sal = 3500 where ename = 'james' ;
+	
+16.Increase the salary of all MANAGER by 1000 
+	
+	mysql> update employee set sal = sal+1000 where job='manager' ;
+	
+17.Decrease the salary of DEPTNO 10 by 100 
+	
+	mysql> update employee set sal = sal-100 where deptno= 10 ;
+	
+18.Add a new field COMM in EMPLOYEE table 
+	
+	mysql> alter table employee  add comm int ;
+	
+19.Initialize the value of COMM to zero in EMPLOYEE table. 
+	
+	mysql> update employee set comm = 0;
+	
+20.Remove the employees who have joined before 6-Jun-2005 
+
+	mysql> delete from employee where HIREDATE < '2005/06/06' ;
+	
+21.Remove employees whose salary is less than 3000 
+	
+	mysql> delete from employee where sal <3000 ;
+	
+22.List all employees who are working in department 10. 
+	
+	mysql> select *from employee where deptno =10 ;
+	
+23.List all employees of department 10 and are MANAGER 
+	
+	mysql> select * from employee where deptno =10 and job='manager';
+	
+24.List all employees whose salary is between 3000 and 5000 
+	
+	mysql> select * from employee where sal between 3000 and 5000 ;
+	
+25. List all employees who have joined after 10thJuly 2005 
+	
+	mysql> select * from employee where HIREDATE < '2005/07/10' ;
+	
+26.List all employees who are MANAGER or PRESIDENT
+	
+	mysql> select * from employee where job = 'manager' or job = 'president' ;
+	
+27.List all employees who are in deptno 10 or 20 and who are MANAGERS 
+	
+	mysql> select * from employee where job ='manager' and ( deptno =10 or deptno =20) ;
+	
+28.Update the commission of employees in deptno 10 to 500. 
+	
+	mysql> update employee set comm = 500 where deptno =10 ;
+	
+29.List all employees whose commission is null. 
+	
+	mysql> select * from employee where comm is null ;
+	
+30.List the employees who are not a PRESIDENT or MANAGER 
+	
+	mysql> select * from employee where job <> 'president' and job!= 'manager';
+	
+31.List all employees whose name begin with J 
+	
+	mysql> select * from employee where ename like('j%');
+	
+32.List all employees whose name consists of A 
+	
+	mysql> select * from employee where ename like('%a%') ;
+	
+33.List the employee sal, comm. and bonus (Bonus is sal+comm.) 
+	
+	mysql> select sal,comm,sal+comm bonus from employee ;
+	
+34.Display the salary of employees of MANAGER increased by 10%. The output should display salary
+		 and increased salary. 
+	
+	mysql> select sal, sal+(sal*0.1) increased_salary from employee where job = 'manager' ; 
+	
+35.Update the salary of MANAGER by 10%. 
+	
+	mysql> update employee set sal = sal+(sal*0.1) where job= 'manager' ;
+	
+36.Display the employees in the desscending order of names 
+	
+	mysql> select * from employee order by ename desc;
+	
+37.Display the employees in the ascending order of deptno, Job 
+	
+	mysql> select * from employee order by deptno ,job asc ; 
+	
+38.Display all the employee names with the first letter in capitals and all the other characters
+	   in lower case 
+	
+	mysql> select concat(upper(substring(ename,1,1)), lower(substring(ename,2))) Name from employee;
+	   
+39. Display all the employee names in lower case 
+	
+	mysql> select lower(ename) from employee ;
+	
+40.Display the employee name and the position of letter A in each name
+	
+	mysql> select ename,length(substring_index(ename,'A',1)) from employee where ename like("%a%");
+	
+41.Extract the last 3 characters in employee name and display them. 
+	
+	mysql> select substring(ename,length(ename)-2,length(ename)) from employee ;
+	
+42.Display the employee name and the length of the name 
+	
+	mysql> select ename , length(ename) Length from employee ;
+	
+43.Display the current system date and time 
+	
+	mysql> select current_date Date , current_time Time ;
+	
+44.Display the employee name and the date when each employee completes 5 years in the company. 
+	
+	mysql> select ename ,adddate(HIREDATE, interval 5 year) Year from employee ;
+	
+45.Display the last day of the month for the current system date 
+	
+	mysql> select day(last_day(current_date)) Last_Day;
+	
+46.Display the last day of the month for all the hiredates in EMPLOYEE table 
+	
+	mysql> select hiredate,day(last_day(hiredate)) Last_Day from employee ;
+	
+47. Display the employee name, hiredate and the total months of experience as on 8thJune 2008 
+	
+	mysql> select datediff('2008/06/08',hiredate) Experience_IN_Days from employee;
+	
+48.Display the employee name, sal and comm. for all employees. Employees having commission as null
+		 should be displayed as 99 
+	
+	mysql> select ename,sal,comm+99 comm from employee where comm is null ;
+		 
+49.Drop table employee EMPLOYEE_BACK 
+	
+	mysql> drop table emloyee_back ;
+	
+50.Display the number of employees in department 10 
+	
+	mysql> select count(*) from employee where deptno = 10 ;
+	
+51.Display the number of employees in each department 
+	
+	mysql> select count(*) from employee group by deptno ;
+	
+52.Display the number of employees in each department job wise 
+	
+	mysql> select job ,count(*) from employee group by  job ;
+	
+53.Display the total number of employees in the table 
+	
+	mysql> select count(*) from employee ;
+	
+54.Display the employee earning the highest 
+	
+	mysql> select ename ,max(sal) from employee ;
+	
+55.Display the employee earning the highest commission 
+	
+	mysql> select ename ,max(comm) from employee ;
+	
+56.Display the employee earning the lowest salary 
+	
+	mysql> select ename ,min(sal) from employee ;
+	
+57.Display the average salary for each department 
+	
+	mysql> select avg(sal) from employee ;
+	
+58.Display distinct jobs in the table 
+	
+	mysql> select distinct job from employee ;
+	
+59.Display the deptno where the number of employees is greater than 3. 
+	
+	mysql> select deptno,count(*) from employee group by deptno having count(*)>3;
+	
+60.Display the total salary department wise 
+	
+	mysql> select d.dname , e.sal from department d inner join employee e On d.deptno = e.deptno group by d.dname having e.sal = max(e.sal);
+	
+61. Display the employee name, job and rank. If the job is PRESIDENT then rank is 1, If the job is
+		 MANAGER then rank is 2 , if the job is CLERK then the rank is 3. 
+	
+	mysql> select ename,job,dense_rank() over(order by job desc) e_rank  from employee ;
+		 
+62. Display the job and total salary for each job having number of employees greater than 5 
+	
+	mysql> select job,sum(sal) from employee group by job having count(*)>5;
+	
+63. There is a proposed deduction of 5000 from every employee’s salary. Check for the balance 
+		salary and display the appropriate message. If the deduction causes value to be less than zero
+		display “Insufficient for Deduction”, if greater than zero “Can be Deducted” 
+	
+	mysql>
+		
+64.Create a table EMPLOYEE_DUP from EMPLOYEE. The new table should only have the structure and 
+		should not have any data values. 
+	
+	mysql> create table employee_dup like employee ;
+	
+65.List the employees who are in the same department as that of CLARK 
+	
+	mysql> select * from employee where deptno =(select deptno from employee where ename = 'clark');
+	
+66.List the employees who drawing the same salary as that of BLAKE 
+	
+	mysql> select * from employee where sal = (select sal from employee where ename= 'blake');
+	
+67.List the employees whose salary is greater than the average salary
+	
+	mysql> select ename from employee where sal > (select avg(sal) from employee) ;
+	
+68.List the employees who are located in NEWYORK or CHICAGO 
+	
+	mysql> select e.ename from department d inner join employee e on d.deptno = e.deptno where loc= 'chicago' or loc='newyork' ;
+	
+69. List the employees whose salary is greater than the salary of BLAKE or CLARK. 
+	
+	mysql> select ename from employee where sal> all(select sal from employee where ename='blake' or ename='clark');
+	
+70. Increase the salary of employees by 10% , who are located in CHICAGO 
+	
+	mysql> select e.ename,sal+(sal*.1) salary from department d inner join employee e on d.deptno=e.deptno and loc='chicago' ;
+	
+71.List the employees whose salary is greater than the average salary of his own department. 
+	
+	mysql> select ename,deptno,max(sal) from employee group by deptno ;
+	
+72. List the employees who are not in the same department as that of BLAKE or CLARK 
+	
+	mysql> select ename from employee where deptno !=all (select deptno from employee where ename ='blake' or ename = 'clark');
+	
+73. Display the department number, name and location for the department for which there exists 
+	employees 
+	
+	mysql> select e.ename,d.deptno,d.loc from department d inner join employee e on d.deptno=e.deptno ;
+	
+74. Create a view emp_vw consisting of ename, sal, job of employees in department 10 
+	
+	mysql> create view emp_vw as select ename,sal,job from employee where deptno = 10;
+	
+75.Create a view emp_vw1 consisting of employee names, sal and job of employees located in CHICAGO
+	
+	mysql> create view emp_vw1 as select e.ename,e.sal,e.job from department d inner join employee e on d.deptno=e.deptno and loc='chicago' ;
+	
+76.Create a view emp_dept consisting of employee names, job, sal , department name and location
+	
+	mysql> create view emp_dept as select e.ename,e.sal,e.job,d.dname,d.loc from department d inner join employee e on d.deptno=e.deptno;
+	
+	  

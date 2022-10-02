@@ -1,0 +1,12 @@
+
+
+ Q1. What is the difference between a synchronized method and a synchronized block?
+ 
+ Answer) 
+         1. synchronized block reduce scope of lock, but synchronized method's scope of lock is whole method.
+         2. synchronized block has better performance as only the critical section is locked but synchronized method has poor performance than block.
+         3. synchronized block provide full control over lock but synchronized method lock either on current object represented by this or class
+            level lock.
+         4. synchronized block can throw NullPointerException but synchronized method doesn't throw.
+         5. synchronized block: synchronized(this){}
+            synchronized method: public synchronized void fun(){}  

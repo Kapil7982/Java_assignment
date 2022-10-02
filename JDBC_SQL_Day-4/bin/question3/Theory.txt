@@ -1,0 +1,34 @@
+
+
+ ● Establish Many to Many relationships among the above tables.
+ 
+ Answer)   create table student_course
+	    -> (
+	    -> roll int,
+	    -> cid int,
+	    -> foreign key (roll) references student(roll),
+	    -> foreign key (cid) references course(cid)
+	    -> );
+	    
+	    
+  ● Find out all the Students Who enrolled in the course Spring.
+  
+  Answer)  mysql> select s.name from student s inner join course c inner join student_course sc on sc.roll=s.roll and sc.cid=c.cid and cname ='spring';
+				+---------+
+				| name    |
+				+---------+
+				| mansi   |
+				| kapil   |
+				+---------+
+				
+ ● Find out all the courses details for a particular student in which he enrolled
+
+ Answer)  mysql> select s.name,c.cname from student s inner join course c inner join student_course cs on cs.roll=s.roll and cs.cid = c.cid group by s.name order by s.name;
+				+---------+--------+
+				| name    | cname  |
+				+---------+--------+
+				| mansi   | spring |
+				| rishabh | java   |
+				| akash    | java  |
+				| kapil   | spring |
+				+---------+--------+

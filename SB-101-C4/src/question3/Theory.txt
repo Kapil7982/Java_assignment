@@ -1,0 +1,89 @@
+
+
+ Q3/- How many types of relationships exist among tables in theDatabase? Explain with some examples, and also mention how to establish these relationships among 
+      tables with examples.
+     
+ Answer)  There are three types of relationship in relational database tables.
+
+		1. One to One relationship
+		2. One to Many relationship
+		3. Many to Many relationship
+		
+		1. One to One relationship => It is used to create a relationship between two tables in 
+		which a single row of the first table can only be related to one and only one records of a
+		second table. Similarly, the second row of the table can also be related to anyone row of
+		the first table.
+		
+		for Eg:
+		
+		Each person have unique pan id vice versa each pan id has unique member.
+		
+		One to One
+		===========
+		
+		create table Person(
+		pid int primary key,
+		pname varchar(12),
+		address varchar(12),
+		mobile varchar(10),
+		email varchar(15),
+		);
+		
+		create table AadharCard(
+		AadharCardno int primary key,
+		issuedate date,
+		personid int unique,
+		foreign key (personid) references Person(pid)
+		);
+		
+		2. One to Many relationship => It is used to create a relationship between two tables.Any
+		single rows of the first table can be realate to one or more rows of the second tables,
+		but the rows of second tables can only relate to the only row in the first table.
+		
+		for eg:
+		
+		Each department has many employess
+		
+		Many to Many
+		=============
+		
+		create table Dept(
+		did int primarykey,
+		dname varchar(15),
+		location varchar(10)
+		);
+		
+		Emp(eid, ename, address, salary, depid ---foreign key references Dept(did));
+		
+		3. Many to Many relationship => It cretes a relationship between two tables. Each record
+		of the first table can relate to any records (or no records) in the second table. Similar
+		ly, each record of the second table can also relate to more than one record of the first
+		table.
+		
+		for eg : 
+		
+		Many student can opt many course and many course are opt by many students.
+		
+		Many to Many
+		
+		create table student(
+		roll int primary key,
+		sname varchar(12),
+		address varchar(12),
+		mobile varchar(10),
+		);
+		
+		create table course(
+		cid int primary key,
+		cname varchar(12),
+		fee int,
+		duration varchar(12),
+		);
+		
+		create table student_course
+		(
+		roll int,
+		cid int,
+		foreign key (roll) references student(roll),
+		foreign key (cid) references courses(cid)
+		);

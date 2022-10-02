@@ -1,0 +1,23 @@
+
+
+ Q5. What is the difference between the sleep and wait method?
+ 
+ Answer)
+           Sleep method :- 
+           
+           1. Sleep method belongs to Thread class.
+           2. Sleep method does not release the lock on object during Synchronization.
+           3. There is no need to call sleep() from Synchronized context.
+           4. Sleep is a static method. 
+           5. public static void sleep() throws Interrupted_Execption.
+           
+           
+           Wait method:- 
+           
+           1. Wait method belongs to Object class.
+           2. Wait method releases lock during Synchronization.
+           3. Wait should be called only from Synchronized context.
+           4. Wait is not a static method. 
+           5. public final void wait().
+ 
+         

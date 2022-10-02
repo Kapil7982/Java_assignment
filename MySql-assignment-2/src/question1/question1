@@ -1,0 +1,15 @@
+
+
+ Q1.  Can you write a query that will help the owner of Cocoa Confections find the COUNT of all orders placed in 2016, by customer e-mail address, sorted
+      Descending?
+      
+ Answer)   select c.email, count(*) order_count from customers c, orders o where o.order_placed_date > '2015-12-31' and o.customer_id=c.customer_id 
+           group by c.email order by order_count desc;
+           
+				+---------------+-------------+
+				| email         | order_count |
+				+---------------+-------------+
+				| abc@gmail.com |           2 |
+				| efg@gmail.com |           1 |
+				+---------------+-------------+
+				2 rows in set (0.01 sec)

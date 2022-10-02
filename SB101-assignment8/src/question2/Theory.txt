@@ -1,0 +1,13 @@
+
+
+ Q2) What are the benefits of using Multithreading?
+ 
+ Answer) There are many benefits of using multithreading such as :-
+ 
+         1. Responsiveness
+         2. Resource Sharing
+         3. Economy
+         4. Scalability
+         5. Better Communication
+         6. Utilization of multiprocessor architecture
+         7. Minimized system resource usage

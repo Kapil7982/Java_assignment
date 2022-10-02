@@ -1,0 +1,38 @@
+
+
+ 
+
+ Q1/- What is JDBC, Write a note on JDBC driver software.
+ 
+ Answer) A JDBC driver (Java Database Connectivity driver) is a small piece of software that allows JDBC to connect to different databases.
+
+        Essentially, a JDBC driver makes it possible to do three things:
+
+		1. Establish a connection with a data source.
+		2. Send queries and update statements to the data source.
+		3. Process the results.
+		
+		it is a translation software written in Java according to the JDBC specification (it comes in the form of Jar file.)
+
+		Responsibility of JDBC driver s/w :
+		===========================
+		
+		1. establishing the Connection.
+		
+		2. receiving the JDBC method calls (java method call ) and translate them into DBMS understandable format.(SQL) and forward them to the DB s/w.
+		
+		3.Translating the DB s/w given result into the Java format (Java objects) and returns that object toe hte JDBC client.
+		
+		
+		step of connect our java application with the DB server (Mysql):
+		==================================================
+		
+		1. download/get the jdbc driver related jar file (mysql-connector.jar) and set that jar file inside the classpath of our application.
+		
+		2.Load the Driver related main class into the memory.
+		
+		3. prepare the Connection string.
+		
+		4. establish the connection.
+		
+		5.after performing the CRUD operation close the connection.

@@ -1,0 +1,418 @@
+
+
+ Q1. Create the following table according to the following information
+ 
+  i) Table name- DEPOSIT
+  
+  Answer) create table deposit(actno varchar(25),cname varchar(20), bname varchar(20), amount int, adate date);
+  
+          desc deposit;
+			+--------+-------------+------+-----+---------+-------+
+			| Field  | Type        | Null | Key | Default | Extra |
+			+--------+-------------+------+-----+---------+-------+
+			| actno  | varchar(25) | YES  |     | NULL    |       |
+			| cname  | varchar(20) | YES  |     | NULL    |       |
+			| bname  | varchar(20) | YES  |     | NULL    |       |
+			| amount | int         | YES  |     | NULL    |       |
+			| adate  | date        | YES  |     | NULL    |       |
+			+--------+-------------+------+-----+---------+-------+
+			
+			
+	 ii) Table name-BRANCH
+	 
+	       desc branch;
+			+-------+-------------+------+-----+---------+-------+
+			| Field | Type        | Null | Key | Default | Extra |
+			+-------+-------------+------+-----+---------+-------+
+			| BNAME | varchar(20) | YES  |     | NULL    |       |
+			| CITY  | varchar(20) | YES  |     | NULL    |       |
+			+-------+-------------+------+-----+---------+-------+
+			
+			
+	iii) Table name-CUSTOMER
+	
+	        desc customer;
+			+---------+-------------+------+-----+---------+-------+
+			| Field   | Type        | Null | Key | Default | Extra |
+			+---------+-------------+------+-----+---------+-------+
+			| CNAMe_2 | varchar(20) | YES  |     | NULL    |       |
+			| CITY_2  | varchar(20) | YES  |     | NULL    |       |
+			+---------+-------------+------+-----+---------+-------+
+	       
+	 iv) Table name-BORROW
+	 
+	         desc borrow;
+				+--------+-------------+------+-----+---------+-------+
+				| Field  | Type        | Null | Key | Default | Extra |
+				+--------+-------------+------+-----+---------+-------+
+				| LOANNO | varchar(5)  | YES  |     | NULL    |       |
+				| CNAME  | varchar(20) | YES  |     | NULL    |       |
+				| BNAME  | varchar(20) | YES  |     | NULL    |       |
+				| AMOUNT | int         | YES  |     | NULL    |       |
+				+--------+-------------+------+-----+---------+-------+
+				
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+ Q2. Describe the tables which are already created.
+ 
+ Answer) 
+ 
+            +------------------+
+			| Tables_in_bankdb |
+			+------------------+
+			| borrow           |
+			| branch           |
+			| customer         |
+			| deposit          |
+			+------------------+
+			
+			
+	  i) Table name- DEPOSIT		
+			
+			desc deposit;
+			+--------+-------------+------+-----+---------+-------+
+			| Field  | Type        | Null | Key | Default | Extra |
+			+--------+-------------+------+-----+---------+-------+
+			| actno  | varchar(25) | YES  |     | NULL    |       |
+			| cname  | varchar(20) | YES  |     | NULL    |       |
+			| bname  | varchar(20) | YES  |     | NULL    |       |
+			| amount | int         | YES  |     | NULL    |       |
+			| adate  | date        | YES  |     | NULL    |       |
+			+--------+-------------+------+-----+---------+-------+
+			
+			
+	 ii) Table name-BRANCH
+	 
+	       desc branch;
+			+-------+-------------+------+-----+---------+-------+
+			| Field | Type        | Null | Key | Default | Extra |
+			+-------+-------------+------+-----+---------+-------+
+			| BNAME | varchar(20) | YES  |     | NULL    |       |
+			| CITY  | varchar(20) | YES  |     | NULL    |       |
+			+-------+-------------+------+-----+---------+-------+
+			
+			
+	iii) Table name-CUSTOMER
+	
+	        desc customer;
+			+---------+-------------+------+-----+---------+-------+
+			| Field   | Type        | Null | Key | Default | Extra |
+			+---------+-------------+------+-----+---------+-------+
+			| CNAMe_2 | varchar(20) | YES  |     | NULL    |       |
+			| CITY_2  | varchar(20) | YES  |     | NULL    |       |
+			+---------+-------------+------+-----+---------+-------+
+	       
+	 iv) Table name-BORROW
+	 
+	         desc borrow;
+				+--------+-------------+------+-----+---------+-------+
+				| Field  | Type        | Null | Key | Default | Extra |
+				+--------+-------------+------+-----+---------+-------+
+				| LOANNO | varchar(5)  | YES  |     | NULL    |       |
+				| CNAME  | varchar(20) | YES  |     | NULL    |       |
+				| BNAME  | varchar(20) | YES  |     | NULL    |       |
+				| AMOUNT | int         | YES  |     | NULL    |       |
+				+--------+-------------+------+-----+---------+-------+
+ ----------------------------------------------------------------------------------------------------------------------------------------------------
+ 
+			
+   
+
+ Q3. Insert the data as for the following
+  
+  i) Deposit
+  
+  
+        +-------+---------+-----------+--------+------------+
+		| actno | cname   | bname     | amount | adate      |
+		+-------+---------+-----------+--------+------------+
+		| 100   | ANIL    | VRCE      |   1000 | 1995-03-01 |
+		| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+		| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+		| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+		| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+		| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+		+-------+---------+-----------+--------+------------+
+		
+		
+		
+		
+	ii) Branch 
+	
+	       
+	        +-----------+-----------+
+			| BNAME     | CITY      |
+			+-----------+-----------+
+			| VRCE      | NAGPUR    |
+			| KAROLBAGH | DELHI     |
+			| CHANDNI   | DELHI     |
+			| MAGROAD   | BANGALORE |
+			+-----------+-----------+
+			
+			
+			
+	iii) Customer
+	
+	
+	            +---------+---------+
+				| CNAMe_2 | CITY_2  |
+				+---------+---------+
+				| ANIL    | CALCUTA |
+				| RAHUL   | BARODA  |
+				| MADHURI | NAGPUR  |
+				| PRAMOD  | NAGPUR  |
+				| SUNIL   | DELHI   |
+				+---------+---------+
+				
+	
+	iv) Borrow
+	
+	
+	            +--------+---------+-----------+--------+
+				| LOANNO | CNAME   | BNAME     | AMOUNT |
+				+--------+---------+-----------+--------+
+				| 201    | ANIL    | VRCE      |   1000 |
+				| 206    | RAHUL   | KAROLBAGH |   5000 |
+				| 311    | SUNIL   | MGROAD    |   3000 |
+				| 321    | MADHURI | CHANDNI   |   2000 |
+				| 375    | PRAMOD  | MGROAD    |   8000 |
+				+--------+---------+-----------+--------+
+	
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+	
+	
+
+ Q4.Retrieve all the records from the table BORROW where amount in between 2000 and 3000.
+ 
+ Answer) select * from borrow where amount BETWEEN 2000 AND 3000;
+ 
+			+--------+---------+---------+--------+
+			| LOANNO | CNAME   | BNAME   | AMOUNT |
+			+--------+---------+---------+--------+
+			| 311    | SUNIL   | MGROAD  |   3000 |
+			| 321    | MADHURI | CHANDNI |   2000 |
+			+--------+---------+---------+--------+
+			
+			
+ Q5. Retrieve the details from the table DEPOSIT.
+ 
+ Answer)  select * from deposit;
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 100   | ANIL    | VRCE      |   1000 | 1995-03-01 |
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			
+			
+ Q6. Retrieve the customer name, account no of DEPOSIT.
+ 
+ Answer) select actno,cname from deposit;
+ 
+			+-------+---------+
+			| actno | cname   |
+			+-------+---------+
+			| 100   | ANIL    |
+			| 101   | SUNIL   |
+			| 102   | RAHUL   |
+			| 103   | MADHURI |
+			| 104   | PRAMOD  |
+			| 105   | SANDIP  |
+			+-------+---------+  
+			
+ Q7. Retrieve the name of the customer living in NAGPUR.
+ 
+ Answer)  select CNAMe_2 from customer where city_2= 'nagpur';
+ 
+			+---------+
+			| CNAMe_2 |
+			+---------+
+			| MADHURI |
+			| PRAMOD  |
+			+---------+
+			
+Q8. Retrieve the name of the customers who opened account after 17-NOV-95.		
+			
+ Answer)  select * from deposit where adate > '1995-11-17';
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			
+
+ Q9. Retrieve the account number and amount of the customer having account opened between 01-12-95 and 01-06.96.
+ 
+ Answer)  select * from deposit where adate BETWEEN '1995-12-01' AND '1996-06-01';
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			
+			
+ Q10. Retrieve all the records from the table DEPOSIT where CNAME begins with C.
+ 
+ Answer)  select * from deposit where cname LIKE 'c%';
+          Empty set (0.02 sec)
+          
+          
+ Q11. Retrieve all the records from the table BORROW where 2nd character of CNAME is U.
+ 
+ Answer)  select * from borrow where cname LIKE '_U%';
+ 
+			+--------+-------+--------+--------+
+			| LOANNO | CNAME | BNAME  | AMOUNT |
+			+--------+-------+--------+--------+
+			| 311    | SUNIL | MGROAD |   3000 |
+			+--------+-------+--------+--------+
+			
+ Q12. Retrieve all the records from the table DEPOSIT where branch name is CHANDNI or MGROAD.
+  
+ Answer)   select * from deposit where bname= 'mgroad' OR bname='chandni';
+ 
+			+-------+---------+---------+--------+------------+
+			| actno | cname   | bname   | amount | adate      |
+			+-------+---------+---------+--------+------------+
+			| 101   | SUNIL   | MGROAD  |   5000 | 1996-01-04 |
+			| 103   | MADHURI | CHANDNI |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD  |   3000 | 1996-03-27 |
+			+-------+---------+---------+--------+------------+
+			
+ Q13. Retrieve all the records from the table DEPOSIT where branch name is not CHANDNI or MGROAD.
+ 
+ Answer)   select * from deposit where bname != 'mgroad' AND bname !='chandni';
+ 
+			+-------+--------+-----------+--------+------------+
+			| actno | cname  | bname     | amount | adate      |
+			+-------+--------+-----------+--------+------------+
+			| 100   | ANIL   | VRCE      |   1000 | 1995-03-01 |
+			| 102   | RAHUL  | KAROLBAGH |   3500 | 1995-11-17 |
+			| 105   | SANDIP | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+--------+-----------+--------+------------+
+			
+			
+ Q14. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in ascending order.
+ 
+ Answer)  select * from DEPOSIT where amount > 1000 ORDER BY cname ASC;
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			+-------+---------+-----------+--------+------------+
+			
+ Q15. Retrieve all the records from DEPOSIT where amount > 1000 and arrange the customer name in descending order.
+ 
+ Answer) select * from DEPOSIT where amount > 1000 ORDER BY cname desc;
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			+-------+---------+-----------+--------+------------+
+			
+ Q16. Retrieve customer details from BORROW table where the third character of the customer name is either ‘A’ or ‘D’.
+ 
+ Answer) select * from borrow where cname LIKE '__A%' OR cname LIKE '__D%';
+ 
+			+--------+---------+---------+--------+
+			| LOANNO | CNAME   | BNAME   | AMOUNT |
+			+--------+---------+---------+--------+
+			| 321    | MADHURI | CHANDNI |   2000 |
+			| 375    | PRAMOD  | MGROAD  |   8000 |
+			+--------+---------+---------+--------+
+			
+			
+ Q17. Retrieve all the records from the table BORROW where amount is not between 2000 and 8000.
+ 
+ Answer) select * from borrow where amount NOT Between 2000 AND 8000;
+			+--------+-------+-------+--------+
+			| LOANNO | CNAME | BNAME | AMOUNT |
+			+--------+-------+-------+--------+
+			| 201    | ANIL  | VRCE  |   1000 |
+			+--------+-------+-------+--------+
+			
+			
+ Q18. Find out the unique records from the table DEPOSIT.
+ 
+ Answer)  select DISTINCT actno,cname,bname,amount,adate from deposit;
+ 
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 100   | ANIL    | VRCE      |   1000 | 1995-03-01 |
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			
+			
+ Q19. 19. Update the amount of all depositors in deposit table by giving them 10% interest (i.e. amount=amount * 0.1) where branch is VRCE.
+ 
+ Answer)  update deposit set amount=amount+amount*0.1 where bname='vrce';
+Query OK, 1 row affected (0.06 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from deposit;
+
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 100   | ANIL    | VRCE      |   1100 | 1995-03-01 |
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			
+			
+ Q20. Update the amount of all depositors in deposit table by giving them 10% interest where branch is VRCE and customer name ANIL.
+ 
+ Answer)  update deposit set amount=amount+amount*0.1 where bname='vrce' AND cname='anil';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from deposit;
+			+-------+---------+-----------+--------+------------+
+			| actno | cname   | bname     | amount | adate      |
+			+-------+---------+-----------+--------+------------+
+			| 100   | ANIL    | VRCE      |   1210 | 1995-03-01 |
+			| 101   | SUNIL   | MGROAD    |   5000 | 1996-01-04 |
+			| 102   | RAHUL   | KAROLBAGH |   3500 | 1995-11-17 |
+			| 103   | MADHURI | CHANDNI   |   1200 | 1995-12-17 |
+			| 104   | PRAMOD  | MGROAD    |   3000 | 1996-03-27 |
+			| 105   | SANDIP  | KAROLBAGH |   2000 | 1996-03-31 |
+			+-------+---------+-----------+--------+------------+
+			 
+ 
+				
+				
+	 
+	 
+	     

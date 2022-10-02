@@ -1,0 +1,36 @@
+
+
+ Q2. What is a ThreadPool, how to create a thread pool of 4 threads, and write down the difference between the Callable and Runnable interface.
+ 
+ Answer) ThreadPool :- A thread pool reuses previously created threads to execute current tasks and offers a solution to the problem of thread 
+                       cycle overhead and resource thrashing. Since the thread is already existing when the request arrives, the delay introduced 
+                       by thread creation is eliminated, making the application more responsive.
+                       
+                       
+          Creating the thread pool of 4 threads:-
+              
+          ExecutorService service = Executors.newFixedThreadPool(4);
+          
+          
+          Callable interface:- 
+          
+          1. This thread has property of return.
+          2. Only one method public Object call() throws Exception return type is Object.
+          3. Not required try-catch block because it throw exception with it's method.
+          4. Belong to java.util.concurrent package.
+          5. It introduce in java 1.5 version.
+          
+          
+          Runnable interface:- 
+          
+          1. This thread won't return anything.
+          2. Only one method public void run() return type void.
+          3. If any exception raise compulsory we need to handle in try-catch block.
+          4. Belong to java.land package.
+          5. It introduce in java 1.0 version.
+          
+                       
+                       
+ 
+ 
+ 

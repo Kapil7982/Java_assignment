@@ -1,0 +1,67 @@
+
+
+ Q4. What is a Race condition, How will you solve the Race condition,explain with an Example.
+  
+ Answer)  A race condition can be defined as, a condition in which two or more threads compete together to get certain shared resources. 
+          For example, if thread A is reading data from the linked list and another thread B is trying to delete the same data.
+          
+          
+         public class Chcek {
+         
+		    public static void main(String[] args) {
+		    
+		        Common c1=new Common();
+		        Common c2=new Common();
+		        ThreadA t1=new ThreadA(c1,"Ram");
+		        ThreadB t2=new ThreadB(c2,"Shyam");
+		        t1.start();
+		        t2.start();
+		        
+		    }
+		}
+
+			class Common{
+			   public void fun(String n)
+			   {
+			       System.out.println(n);
+			   }
+			}
+			
+			class ThreadA extends  Thread{
+			    Common c1;
+			    String name;
+			    public  ThreadA(Common c1,String name)
+			    {
+			        this.c1=c1;
+			        this.name=name;
+			    }
+			    @Override
+			    public void  run()
+			    {
+			
+			            System.out.println("Welcome");
+			            c1.fun(name);
+			
+			    }
+			
+			}
+			class ThreadB extends  Thread{
+			    Common c1;
+			    String name;
+			    public  ThreadB(Common c1,String name)
+			    {
+			        this.c1=c1;
+			        this.name=name;
+			    }
+			    public  void  run(){
+			
+			            System.out.println("Welcome");
+			            c1.fun(name);
+			
+			    }
+			}
+			
+			
+			 In the above code this method will generate race condition because t1 and t2 trying to access run method at same time.
+			 so if we add synchronized block there then it will resolve this problem.
+			 

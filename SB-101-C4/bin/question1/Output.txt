@@ -1,0 +1,234 @@
+
+
+
+   Enter Roll :
+			1
+			Enter name :
+			Venkat
+			Enter address :
+			Delhi
+			Enter mobile no. :
+			852665
+			Record Inserted Sucessfully
+			
+			Enter Roll :
+			2
+			Enter name :
+			Amit
+			Enter address :
+			Pune
+			Enter mobile no. :
+			582564
+			Record Inserted Sucessfully
+			
+			
+			Enter Roll :
+			3
+			Enter name :
+			Raj
+			Enter address :
+			Goa
+			Enter mobile no. :
+			516568
+			Record Inserted Sucessfully
+			
+			Enter Roll :
+			4
+			Enter name :
+			Binay
+			Enter address :
+			Rewari
+			Enter mobile no. :
+			562491
+			Record Inserted Sucessfully
+			
+			Enter Roll :
+			5
+			Enter name :
+			Suresh
+			Enter address :
+			Gujrat
+			Enter mobile no. :
+			659514
+			Record Inserted Sucessfully
+			
+			
+			mysql> create table student(roll int primary key,name varchar(12) not null, address varchar(12) not null,mobile varchar(12) not null);
+		
+			+---------+-------------+------+-----+---------+-------+
+			| Field   | Type        | Null | Key | Default | Extra |
+			+---------+-------------+------+-----+---------+-------+
+			| roll    | int         | NO   | PRI | NULL    |       |
+			| name    | varchar(12) | NO   |     | NULL    |       |
+			| address | varchar(12) | NO   |     | NULL    |       |
+			| mobile  | varchar(12) | NO   |     | NULL    |       |
+			+---------+-------------+------+-----+---------+-------+
+			
+			
+			mysql> create table student(cid int primary key,cname varchar(12) not null,fee int not null,duration varchar(12) not null);
+			
+			mysql> create table course(cid int primary key,cname varchar(12) not null,fee int not null,duration varchar(12) not null);
+			
+			+----------+-------------+------+-----+---------+-------+
+			| Field    | Type        | Null | Key | Default | Extra |
+			+----------+-------------+------+-----+---------+-------+
+			| cid      | int         | NO   | PRI | NULL    |       |
+			| cname    | varchar(12) | NO   |     | NULL    |       |
+			| fee      | int         | NO   |     | NULL    |       |
+			| duration | varchar(12) | NO   |     | NULL    |       |
+			+----------+-------------+------+-----+---------+-------+
+			
+			
+			mysql> create table student_course
+			    -> (
+			    -> roll int,
+			    -> cid int,
+			    -> foreign key (roll) references student(roll),
+			    -> foreign key (cid) references course(cid)
+			    -> );
+			
+			
+			mysql> desc student_course;
+			+-------+------+------+-----+---------+-------+
+			| Field | Type | Null | Key | Default | Extra |
+			+-------+------+------+-----+---------+-------+
+			| roll  | int  | YES  | MUL | NULL    |       |
+			| cid   | int  | YES  | MUL | NULL    |       |
+			+-------+------+------+-----+---------+-------+
+			
+			
+			mysql> select * from student;
+			+------+--------+----------+--------+
+			| roll | name   | address  | mobile |
+			+------+--------+----------+--------+
+			|    1 | Venkat | Delhi    | 852665 |
+			|    2 | Amit   | haridwar | 582564 |
+			|    3 | Raj    | chenaai  | 516568 |
+			|    4 | Binay  | mumbai   | 562491 |
+			|    5 | Suresh | surat    | 659514 |
+			+------+--------+----------+--------+
+		
+			
+			11
+			Enter course name :
+			Spring
+			Enter fess :
+			5000
+			Enter duration :
+			35-days
+			Course Record Inserted Sucessfully
+			
+			Enter course Id :
+			12
+			Enter course name :
+			Hibernate
+			Enter fess :
+			6000
+			Enter duration :
+			40-days
+			Course Record Inserted Sucessfully
+			
+			Enter course Id :
+			13
+			Enter course name :
+			React
+			Enter fess :
+			7000
+			Enter duration :
+			50-days
+			Course Record Inserted Sucessfully
+			
+			
+			Enter course Id :
+			14
+			Enter course name :
+			Angular
+			Enter fess :
+			8000
+			Enter duration :
+			50-days
+			Course Record Inserted Sucessfully
+			
+			
+			
+			mysql> select * from course;
+			+-----+-----------+------+----------+
+			| cid | cname     | fee  | duration |
+			+-----+-----------+------+----------+
+			|  10 | Java      | 5000 | 45-days  |
+			|  11 | Spring    | 5000 | 35-days  |
+			|  12 | Hibernate | 6000 | 40-days  |
+			|  13 | React     | 7000 | 50-days  |
+			|  14 | Angular   | 8000 | 50-days  |
+			+-----+-----------+------+----------+
+			
+			
+			
+			mysql> insert into student_course values(2,10);
+		
+			
+			mysql> insert into student_course values(2,11);
+			
+			
+			mysql> select * from student_course;
+			+------+------+
+			| roll | cid  |
+			+------+------+
+			|    2 |   10 |
+			|    2 |   11 |
+			+------+------+
+			
+			
+			mysql> insert into student_course values(5,10);
+			
+			
+			mysql> insert into student_course values(5,12);
+			
+			
+			mysql> insert into student_course values(5,13);
+			
+			
+			mysql> insert into student_course values(1,13);
+			
+			
+			mysql> insert into student_course values(1,10);
+			
+			
+			mysql> insert into student_course values(3,11);
+			
+			
+			mysql> insert into student_course values(3,14);
+			
+			
+			mysql> insert into student_course values(3,13);
+			
+			
+			mysql> select name from student_course;
+			
+			mysql> select * from student;
+			+------+--------+----------+--------+
+			| roll | name   | address  | mobile |
+			+------+--------+----------+--------+
+			|    1 | Venkat | Delhi    | 124536 |
+			|    2 | Amit   | haridwar | 254632 |
+			|    3 | Raj    | chenaai  | 587452 |
+			|    4 | Binay  | mumbai   | 878955 |
+			|    5 | Suresh | surat    | 365241 |
+			+------+--------+----------+--------+
+			
+			
+			mysql> select * from student_course;
+			+------+------+
+			| roll | cid  |
+			+------+------+
+			|    2 |   10 |
+			|    2 |   11 |
+			|    5 |   10 |
+			|    5 |   12 |
+			|    5 |   13 |
+			|    1 |   13 |
+			|    1 |   10 |
+			|    3 |   11 |
+			|    3 |   14 |
+			|    3 |   13 |
+			+------+------+

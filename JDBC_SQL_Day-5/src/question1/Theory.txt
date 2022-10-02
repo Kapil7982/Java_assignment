@@ -1,0 +1,31 @@
+
+
+ Q1.  What is the Difference between the Statement and the PreparedStatement?
+
+Answer) 
+
+			Statement - 
+			
+			1. It is used when SQL query is to be executed only once.
+			2. You can not pass parameters at runtime.
+			3. Used for CREATE, ALTER, DROP statements.
+			4. Performance is very low.
+			5. It is base interface.
+			6. Used to execute normal SQL queries.
+			7. We can not use statement for reading binary data.
+			8. It is used for DDL statements.
+			9. We can not use statement for writing binary data.
+			10. No binary protocol is used for communication.
+			
+			PreparedStatement - 
+			
+			1. It is used when SQL query is to be executed multiple times.
+			2. You can pass parameters at runtime.
+			3. Used for the queries which are to be executed multiple times.
+			4. Performance is better than Statement.
+			5. It extends statement interface.
+			6. Used to execute dynamic SQL queries.
+			7. We can use Preparedstatement for reading binary data.
+			8. It is used for any SQL Query.
+			9. We can use Preparedstatement for writing binary data.
+			10. Binary protocol is used for communication.
