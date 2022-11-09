@@ -1,0 +1,68 @@
+package com.example.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.example.demo.repo.BooksDao;
+
+@RestController
+public class MyController {
+
+	@Autowired
+	private BooksDao bdao;
+	
+	
+	@PostMapping("/book")
+	public book createbook(@RequestBody book b) {
+		 return bdao.save(b);
+		
+	}
+	@GetMapping("/book")
+	
+	public List<book> getallbooks() throws BooknotFoundException{
+		
+		if(bdao.findAll().size()>0) {
+			return bdao.findAll();
+		}
+		else
+			throw new BooknotFoundException("No books available");
+	}
+	
+	@GetMapping("/book/{id}")
+	public book bookbyid(@PathVariable Integer id) throws BooknotFoundException {
+		
+		if(bdao.findById(id).get() != null)
+			return bdao.findById(id).get();
+			
+		
+			else
+				throw new BooknotFoundException("No books available");
+		
+	}
+	
+	@PutMapping("/book")
+	public book updatebook(@RequestBody book b) throws BooknotFoundException {
+		if(bdao.findById(b.getBookId())!=null) {
+			return bdao.save(b);
+		}
+		else
+			throw new BooknotFoundException("Not book available");
+		
+	}
+	
+	@DeleteMapping("/book/{id}")
+	public book Deletebook(@PathVariable Integer id) throws BooknotFoundException {
+		
+		  Optional<book> opt=bdao.findById(id);
+		  if(opt.isPresent()) {
+			  book pr=opt.get();
+			 bdao.delete(pr);
+			 return pr;
+		  }
+			  
+		
+			else 
+				throw new BooknotFoundException("Not book available");
+	}
+}

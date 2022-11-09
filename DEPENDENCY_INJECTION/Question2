@@ -1,0 +1,17 @@
+
+
+ Q2. Explain about IOC and Dependency Injection.
+ 
+ Answer) 
+           IOC :-
+
+			1. As we know to make two classes loosely coupled we need to apply dependency injection mechanism and POJO by POJI mechanism.
+			2. Earlier we are doing this thing manually but if any external entity or framework do this work then we can say that control is 
+			   inverted to that external framework and we called that framework as Inversion Of Control(IOC).
+			
+			Dependency Injection:
+			
+			So create two class loosely coupled we need to apply dependency mechanism. There is two way to apply dependency injection.
+			
+			1)Using Constructor 
+			2) Using Setter Method

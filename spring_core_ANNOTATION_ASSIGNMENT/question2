@@ -1,0 +1,24 @@
+
+
+  Q2. What are the Spring Stereotype annotations, and what are the main uses of these annotations.
+  
+  Answer)  There is total 4 types of Stereotype Annotations :- 
+  
+  
+			1. Component :- Component is a parent of all the Annotations. If we not able to decide in which layer this class will be stored than 
+			                we can write component.
+			                
+			2. Repository :- Repository means that class is belongs to data access layer.
+			
+			3. Service :- Service means that class is belongs to business logic layer where we can write business logic related method.
+			
+			4. Controller :- Controller means we have to apply this annotation on presentation layer classes.
+			
+		 
+			
+			 
+			
+			
+			
+			
+  

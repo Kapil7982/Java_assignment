@@ -1,0 +1,73 @@
+package com.evaluation.question1.Service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.evaluation.question1.exception.EmployeeException;
+import com.evaluation.question1.model.Employee;
+import com.evaluation.question1.model.EmployeeDTO;
+import com.evaluation.question1.repo.EmployeeDao;
+
+@Service
+public class EmployeeServiceImpl implements EmployeeService{
+
+	@Autowired
+	private EmployeeDao empdao;
+	
+	@Override
+	public Employee registerEmployee(Employee emp) throws EmployeeException {
+		
+		return null;
+	}
+
+	@Override
+	public Employee getEmployeeById(Integer empId) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getAllEmployeeDetails() throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee deleteEmployeeById(Integer empId) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee loginEmployee(String email, String password) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Employee> getEmployeeDetailsByAddress(String address) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Employee updateEmployee(Employee emp) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getNameAndAddressOfEmplyeeById(Integer empId) throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<EmployeeDTO> getNameAddressSalaryOfAllEmployee() throws EmployeeException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,20 @@
+
+
+ Q3. What are the challenges of developing an Enterprise application?
+ 
+ Answer)  To develop any Enterprise level application we have to divide application into modules and that modules are independent but also 
+          communicate with each other and gives desired solution. So in this we get below challenges :- 
+
+			1. Data security :- during data exchange we have to encrypt and decrypt our data.also need authorization and verification.
+			
+			2. Our end user can access Enterprise application is platform and language independent form. That means our presentation logic is 
+			   web-enabled.
+			
+			3. Transaction management :- If there is any technical error everything should roll back or else
+			   everything should commit.
+			
+			4. Logging :- we have to give message to every module.so that if any bug comes we can debug that.
+			
+			5. Message :- client should get  message
+			
+			6. Mailing :- client should get mail.

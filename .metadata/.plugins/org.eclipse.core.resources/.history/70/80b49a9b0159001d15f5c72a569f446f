@@ -1,0 +1,36 @@
+package question2;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
+
+public class StudentService {
+
+	@Autowired
+	private Map<Student, Course> theMap;
+	
+	@Autowired
+	@Qualifier("getList")
+	private List<Student> theList; 
+	
+	@Value("${appName1}")
+	private String appName; 
+	
+	
+		public void printMap()
+		{
+			System.out.println();
+			System.out.println(theMap);
+		}
+		public void printList()
+		{
+		
+		}
+		public void printAppName()
+		{
+		
+		}
+}

@@ -1,0 +1,19 @@
+package com.masai;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Triangle implements DrawShapes{
+
+	
+	void start() {
+		
+		System.out.println("You have drawn Triangle");
+	}
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		start();
+	}
+
+}

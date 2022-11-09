@@ -1,0 +1,17 @@
+
+
+ Q4. Write Short notes on how the Spring framework evolves.
+ 
+ Answer)  As we know that to build Enterprise Application we have to do many repeated things and that will be very much burden on developer.
+          In early days of java based business application development, programmer used multiple java bean classes (normal java classes) to build the
+          business logic layer/service layer. The Business logic layer only required the Enterprise capabilities like security, tx-management, 
+          logging, mailing, messaging, etc, these enterprise capabilities are also known as extra service to the main business logic or middle were 
+          services to make our main business logic perfect.
+          
+          To overcome this problem in 2004 Rod Jonshon created Spring Framework. Spring is a application f/w software to develop EA. software
+          communities treats spring as a framework of frameworks, because it gives the support of various other f/w software also. like hibernate, 
+          struts, JSF,etc.
+          
+          Spring is an open source, light weight application f/w that can be used in all the layers of Java based Enterprise application development.
+          With the Spring f/w we can develop J2SE related or J2EE related application as well.
+ 

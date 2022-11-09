@@ -1,0 +1,19 @@
+
+
+ Q2. Explain the difference between Spring-MVC and Spring Boot.
+
+ Answer)    1. Spring MVC is a Model View, and Controller based web framework widely used to develop web applications.
+ 
+			2. Spring Boot is built on top of the conventional spring framework, widely used to develop REST APIs.
+			
+			3. We need to build the configuration manually in Spring MVC.
+			
+			4. There is no need to build the configuration manually in Spring Boot.
+			
+			5. A deployment descriptor is required in Spring MVC.
+			
+			6. There is no need for a deployment descriptor in Spring Boot.
+			
+			7. Spring MVC framework consists of four components : Model, View, Controller, and Front Controller.
+			
+			8. There are four main layers in Spring Boot: Presentation Layer, Data Access Layer, Service Layer, and Integration Layer.

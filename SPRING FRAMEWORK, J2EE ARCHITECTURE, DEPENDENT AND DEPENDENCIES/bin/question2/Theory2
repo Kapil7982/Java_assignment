@@ -1,0 +1,13 @@
+
+
+ Q2. What is the difference between an Application Server and a Web server?
+ 
+ Answer)   Difference between WebServer and ApplictionServer :- 
+
+
+	1. Java based webserver is the small part/ subset of the ApplicationServer. AS contains both EJB container and ServletContainer s/w where as
+	   Webserver s/w contains only ServletContainer s/w, it does not contains EJB-container.
+	
+	2.AS can be communicated with any kind of protocol ex: http, smtp, ftp, etc, whereas WS can be communicated only using Http protocol.
+	
+	3. AS is a heavy weight server where as Webserver is a lightweight server.

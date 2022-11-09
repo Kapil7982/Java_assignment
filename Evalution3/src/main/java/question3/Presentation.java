@@ -1,0 +1,112 @@
+//package question3;
+//
+//import java.util.List;
+//import java.util.Scanner;
+//
+//import org.springframework.context.ApplicationContext;
+//import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+//import org.springframework.stereotype.Controller;
+//
+//
+//
+//@Controller(value = "isuc")
+//
+//public class Presentation {
+//
+//	private ProductService ps;
+//	
+//	public void insertProduct(){
+//		
+//		 Scanner sc= new Scanner(System.in);
+//       
+//		
+//		System.out.println("Enter Product Name ");
+//		String name= sc.next();
+//	
+//		System.out.println("Enter Quantity ");
+//		int qnt= sc.nextInt();
+//		
+//		System.out.println("Enter Price ");
+//		int p= sc.nextInt();
+//	
+//		
+//		Product prod = new Product();
+//		prod.setProductName(name);
+//		prod.setQuantity(qnt);
+//		prod.setPrice(p);
+//		
+//		
+//	 	boolean result= ps.addProduct(prod);
+//		
+//	 	System.out.println(result);
+//		
+//		}
+//		public void printAllProduct(){
+//		
+//			
+//		 List<Product> allp=ps.getAllProducts();
+//		 System.out.println(allp);
+//		 
+//		}
+//		
+//		public void searchProduct(){
+//		
+//			Scanner sc= new Scanner(System.in);
+//			System.out.println("Enter ProductId ");
+//			int id= sc.nextInt();
+//			
+//			try {
+//				Product p=ps.getProductById(id);
+//				System.out.println(p);
+//				
+//			} catch (ProductException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		
+//		}
+//		public void GetProductsWithingPriceRange(){
+//		
+//			
+//			    Scanner sc= new Scanner(System.in);
+//		       
+//				
+//				
+//				System.out.println("Enter Price from ");
+//				int p1= sc.nextInt();
+//				
+//				System.out.println("Enter Price to ");
+//				int p2= sc.nextInt();
+//				
+//				try {
+//					List<Product> pr=ps.getProductsBetweenPrice(p1, p2);
+//					
+//				} catch (ProductException e) {
+//					// TODO Auto-generated catch block
+//					e.printStackTrace();
+//				}
+//		}
+//		
+//		public static void main(String[] args) {
+//			
+//			ApplicationContext ctx = new AnnotationConfigApplicationContext(ProductConfig.class);
+//			
+//			 Presentation obj= ctx.getBean("isuc",Presentation.class);
+//			
+//			 obj.insertProduct();
+//			 obj.GetProductsWithingPriceRange();
+//			 obj.printAllProduct();
+//			 obj.searchProduct();
+//			
+//		}
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//		
+//
+//}

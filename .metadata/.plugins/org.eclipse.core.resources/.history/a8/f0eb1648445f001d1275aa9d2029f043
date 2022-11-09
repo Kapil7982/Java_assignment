@@ -1,0 +1,5 @@
+package com.evaluation.question1.model;
+
+public class EmployeeDTO {
+
+}

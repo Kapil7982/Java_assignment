@@ -1,0 +1,16 @@
+package com.masai;
+
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
+public class Demo {
+
+	void made() {
+		
+		 s.draw();
+	}
+	
+	private Shapes s;
+}

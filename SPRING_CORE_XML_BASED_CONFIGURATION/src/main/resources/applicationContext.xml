@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+ <beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="e1" class="com.tenth_assignment.Employee">
+<constructor-arg name="empId" value="1"/>
+<constructor-arg name="empName" value="Ravi"/>
+<constructor-arg name="address" value="Banglore"/>
+<constructor-arg name="salary" value="70000"/>
+</bean>
+
+<bean id="e2" class="com.tenth_assignment.Employee">
+<constructor-arg name="empId" value="2"/>
+<constructor-arg name="empName" value="Samual"/>
+<constructor-arg name="address" value="Ahemdabad"/>
+<constructor-arg name="salary" value="80000"/>
+</bean>
+
+<bean id="e3" class="com.tenth_assignment.Employee">
+<constructor-arg name="empId" value="3"/>
+<constructor-arg name="empName" value="Kavi"/>
+<constructor-arg name="address" value="Jaipur"/>
+<constructor-arg name="salary" value="90000"/>
+</bean>
+
+<bean id="d1" class="com.tenth_assignment.Department">
+<constructor-arg name="deptId" value="1"/>
+<constructor-arg name="deptName" value="Sales"/>
+<constructor-arg name="location" value="Delhi"/>
+
+</bean>
+<bean id="d2" class="com.tenth_assignment.Department">
+<constructor-arg name="deptId" value="2"/>
+<constructor-arg name="deptName" value="Marketing"/>
+<constructor-arg name="location" value="New York"/>
+
+</bean>
+<bean id="d3" class="com.tenth_assignment.Department">
+<constructor-arg name="deptId" value="3"/>
+<constructor-arg name="deptName" value="Accounts"/>
+<constructor-arg name="location" value="Shri Hari Kota"/>
+
+</bean>
+
+<bean  id="dd" class="com.tenth_assignment.Demo" init-method="myInit" lazy-init="true" scope="prototype" destroy-method="cleanUp">
+
+<property name="theMap">
+<map>
+<entry key-ref="d1" value-ref="e1"/>
+<entry key-ref="d2" value-ref="e2"/>
+<entry key-ref="d3" value-ref="e3"/>
+</map>
+</property>
+
+
+</bean>
+</beans>

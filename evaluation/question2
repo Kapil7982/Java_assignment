@@ -1,0 +1,39 @@
+
+Q2. 
+	 ● Explain difference between JPA and Hibernate.
+	
+	 
+ Answer)   Here are some key difference between JPA and Hibernate:-
+ 
+ 
+            1. Here Hibernate is an ORM software.There are so many companies making ORM softwares.
+
+			2. Every company using their own API to create there ORM software.
+			
+			3. so if any user want to switch from one software to another software they can't because API is different for all this software.
+			
+			4. To overcome this problem oracle corporation devloped JPA api.
+			
+			5. so every ORM software have compoulsorly use JPA api in their software and they can also use their own api too.
+			
+			6. So basically JPA is specification and Hibernate is one of the famous implementation.
+			
+			7. JPA api belongs to "javax.persistence" package and hibernate api belongs to "org.hibernate " package.
+			
+			
+	 ● Explain the Life-cycle of Entity class with example.
+	 
+ Answer)    Here is the life-cycle of Entity class:- 
+ 
+            1. Presentation layer/ UI layer :- As in the name mentioned Presentation it means there is some classes in java that shows the input screen and also 
+                                            output screen.It is interacting with the end user.
+                                            
+            2. Business logic layer/ Service layer :- As the name suggests programable implementation of Business services is known as Business Logic Layer.for 
+                                                   example in Bank-project there is some methods that are meant to implements to calculate the interests on 
+                                                   that amount so this is one type of business logic.
+                                                   
+            3. Data access layer :- In this layer some of the java classes and methods are mean to do CRUD operation with databaseserver.JDBC and DAO pattern are
+                                 the example of this.In that we call a method to perform CRUDoperation on our sql database.
+ 
+             	
+			

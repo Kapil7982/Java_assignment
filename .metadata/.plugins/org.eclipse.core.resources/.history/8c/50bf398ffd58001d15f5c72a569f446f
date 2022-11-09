@@ -1,0 +1,21 @@
+package com.masai;
+
+import java.io.ObjectInputFilter.Config;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext ac = new AnnotationConfigApplicationContext(Config.class);
+		
+		ac.getBean("v",Demo.class).made();
+		
+		AnnotationConfigApplicationContext acac = (AnnotationConfigApplicationContext)ac;
+		acac.close();
+	}
+
+}

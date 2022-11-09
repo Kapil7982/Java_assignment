@@ -1,0 +1,19 @@
+package com.masai;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Cylinder implements Drawshapes{
+
+	
+	void start() {
+		System.out.println("You have drawn Cylinder");
+	}
+	@Override
+	public void draw() {
+		// TODO Auto-generated method stub
+		start();
+	}
+
+	 
+}

@@ -1,0 +1,16 @@
+ 
+ 
+ Q1. What are the advantages of using Hibernate over JDBC?
+ 
+ Answer) Hibernate is one ORM software.ORM means object relation mapping. It's means we can map our object directly to database.
+		
+		Here are some Advantages of hibrenate
+		
+		1. We can directly map our java objects to database.we dont need to convert it into single atomic value.it reduces the work of developer.
+		
+		2. Hibernate is database independent software. In hiberante we basically write our logic in the form of java objects. So we can use that code
+		   in any database software.where in jdbc we can't do this. Hibernate generate sql query using that logic.In jdbc we have to write that sql 
+		   query that depends on database software.
+		
+		3. In JDBC there is a big boiler plate code too.it is tough to manage the boiler plate code everytime.but in Hibernate there is very less 
+		   boiler plate code.

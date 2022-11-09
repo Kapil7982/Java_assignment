@@ -1,0 +1,27 @@
+package com.evaluation.question1.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.evaluation.question1.Service.EmployeeServiceImpl;
+import com.evaluation.question1.exception.EmployeeException;
+import com.evaluation.question1.model.Employee;
+
+@RestController
+@RequestMapping("/Emps")
+public class MyController {
+
+	@Autowired
+	private EmployeeServiceImpl empa;
+	
+	@PostMapping("/employee")
+	public ResponseEntity<Employee> Register(@ResponseBody Employee em) throws EmployeeException
+	{
+		return new ResponseEntity<Employee>(empa.registerEmployee(em),HttpStatus.CREATED);
+	}
+}

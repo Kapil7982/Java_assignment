@@ -1,0 +1,60 @@
+
+
+  Q2. Explain the difference between JPA and Hibernate, and What are the advantages of using Hibernate over JDBC?
+ 	 
+Answer)  The Difference Between JPA and Hibernate is :
+		
+		JPA:- 
+		
+		1. Java Persistence API (JPA) defines the management of relational data
+		   in the Java applications.
+		   
+		2. It is just a specification. Various ORM tools implement it for data persistence.
+		
+		3. It is defined in javax.persistence package.
+		
+		4. The EntityManagerFactory interface is used to interact with the entity manager 
+		   factory for the persistence unit. Thus, it provides an entity manager.
+		   
+		5. It uses EntityManager interface to create, read, and delete operations for instances 
+		   of mapped entity classes. This interface interacts with the persistence context.
+		   
+		6. It uses Java Persistence Query Language (JPQL) as an object-oriented query language 
+		   to perform database operations.
+		   
+		Hibernate:- 
+		
+		
+		1. Hibernate is an Object-Relational Mapping (ORM) tool which is used to save the 
+		   state of Java object into the database.
+		   
+		2. It is one of the most frequently used JPA implementation.
+		
+		3. It is defined in org.hibernate package.
+		
+		4. It uses SessionFactory interface to create Session instances.
+		
+		5. It uses Session interface to create, read, and delete operations for instances 
+		   of mapped entity classes. It behaves as a runtime interface between a Java 
+		   application and Hibernate.
+		   
+		6. It uses Hibernate Query Language (HQL) as an object-oriented query language to
+		   perform database operations.
+		   
+		   
+		   
+		Some of the important advantages of Hibernate framework over JDBC are:-
+		
+		1. Hibernate removes a lot of boiler-plate code that comes with JDBC API, the code looks more cleaner 
+			and readable.
+			
+		2. Hibernate supports inheritance, associations and collections. These features are not present with JDBC API.
+		
+		3. Hibernate Query Language (HQL) is more object oriented and close to java programming language. For JDBC, 
+			we need to write native sql queries.
+			
+		4. Hibernate supports caching that is better for performance, JDBC queries are not cached hence performance is
+			 low.
+		
+		5. Hibernate provide option through which we can create database tables too, for JDBC tables must exist in the
+			 database.

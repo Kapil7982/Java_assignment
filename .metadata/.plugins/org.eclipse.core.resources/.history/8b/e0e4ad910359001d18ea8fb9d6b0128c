@@ -1,0 +1,20 @@
+package question2;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class AppConfig {
+
+	public List<Student> getList()
+	{
+		List<Student> stu = new ArrayList<>();
+		
+		stu.add(new Student(1,"Koti","Nandigama","Koti@123",79));
+		stu.add(new Student(2,"Divya","Mylavaram","Divya@123",89));
+		stu.add(new Student(3,"Ram","Rameshwar","Ram@123",90));
+		stu.add(new Student(4,"Ramu","Nandigama","Ramu@123",98));
+		stu.add(new Student(5,"Shiva","Kailasam","Shiva@123",100));
+		
+		return stu;
+	}
+}

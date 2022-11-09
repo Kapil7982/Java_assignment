@@ -1,0 +1,59 @@
+package com.masai.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.masai.exception.ProductException;
+import com.masai.model.Product;
+import com.masai.model.ProductDTO;
+import com.masai.repo.ProductDao;
+
+@Service
+public class ProductServiceImpl implements ProductService{
+
+	@Autowired
+	private ProductDao dao; 
+	
+	@Override
+	public Product registerProduct(Product p) throws ProductException {
+		
+		Product pr=dao.save(p);
+		if(pr!=null)
+			return pr;
+		else 
+			throw new ProductException("Product didn't registeer");
+	}
+
+	@Override
+	public List<Product> getAllProducts() throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product updateProdcut(Product p) throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Product deleteProductById(Integer pid) throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Product> getsProductByCategory(String category) throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<ProductDTO> getProductNameQtyPrice() throws ProductException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

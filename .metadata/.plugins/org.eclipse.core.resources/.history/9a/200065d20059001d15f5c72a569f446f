@@ -1,0 +1,9 @@
+package question2;
+
+public class Course {
+
+	    private int courseId;
+		private String courseName;
+		private String duration;
+		private int fee;
+}

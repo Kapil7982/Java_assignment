@@ -1,0 +1,62 @@
+
+
+ Q2. What is the HTTP protocol, explain about the HTTP request and the HTTP response.
+ 
+ Answer)  HTTP full form is hyper text transfer protocol. Whenever we want to communicate between client web browser to web server we need to use 
+          HTTP. HTTP is one type of instruction set to communicate between two different technology
+			
+			HTTP request:
+			
+			this request is distributed in three parts
+			1. Initial request
+			
+			 i) This initial request is also have 3 parts in which first one is method type there is GET,POST,PUT,DELETE this four methods is there. 
+			    We can select any of above method.
+			
+			 ii) Second part is Uri in that we have to write the page name . Uri means universal resource identifier that identify your HTML page 
+			     which will be deploy in web browse.
+			
+			iii) The last part is version in that we select the HTTP browser ex-1.1,2.x etc.
+			
+			
+			2. Request header :- Second part is request header in that there is data in key value pair Where key is fixed and value will change as
+			                     per client request.
+			                     
+		    i)   Date : Date and time on which request is made from the client.
+			ii)  Host: IPaddress of the client.
+			iii) User-agent: From which browser the client has generated the request.
+			iv)  Content-type: Type of the data coming from the request body (JSON, TEXT, XML, PDF, JPG)
+			v)   Connection : Live or lost(used in social media platform to show you are online or not)
+			vi)  Cookies: Name-value pair text (store you preference)
+			      we can create our headers also 
+			
+			3. Request body :- Third  part is Request body in which we send the data as per client requirement in JSON or XML or in any other 
+			                   format.GET and DELETE method doesn't have any request body.
+			
+			
+			
+			
+			
+			
+			HTTP response:
+			
+			This request is distributed in three parts
+			
+			i) Initial response :- First part is distributed in three parts status code,status code description and version. In status code it will
+			                       show a code like 201,299 etc and description it will be mentioned the what that code stands for and version is
+			                       same as HTTP request.
+			                       
+			ii) Response header :- Second part is response header in which here also key value pair is there. In that it's gives some additional 
+			                       information to client and guide the client while displaying the response.
+			                       
+			iii) Response body :- Third part is response body which return the data for Webapplication it gives in HTML type format and for 
+			                       webservice it return in raw data form.
+			
+			
+			
+			
+			
+			
+			
+			
+			 

@@ -1,0 +1,47 @@
+package com.evaluationquesiton2.exception;
+
+import java.time.LocalDateTime;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+@ControllerAdvice
+public class GlobalHandler {
+
+	@ExceptionHandler(AccountException.class)
+	public ResponseEntity<ErrorDetails> EmpException(AccountException ee,WebRequest req) {
+		 ErrorDetails err=new ErrorDetails();
+		 
+		 err.setTime(LocalDateTime.now());
+		 err.setMsg(ee.getMessage());
+		 err.setDesc(req.getDescription(false));
+		 
+		 return new ResponseEntity<>(err,HttpStatus.BAD_GATEWAY);
+	}
+	
+	@ExceptionHandler(InstantiationException.class)
+	public ResponseEntity<ErrorDetails> EmpException(InsufficientFundException ee,WebRequest req) {
+		 ErrorDetail err=new ErrorDetail();
+		 
+		 err.setTime(LocalDateTime.now());
+		 err.setMsg(ee.getMessage());
+		 err.setDesc(req.getDescription(false));
+		 
+		 return new ResponseEntity<>(err,HttpStatus.BAD_GATEWAY);
+	}
+	
+
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<ErrorDetail> EmpException(Exception ee,WebRequest req) {
+		 ErrorDetail err=new ErrorDetail();
+		 
+		 err.setTime(LocalDateTime.now());
+		 err.setMsg(ee.getMessage());
+		 err.setDesc(req.getDescription(false));
+		 
+		 return new ResponseEntity<>(err,HttpStatus.BAD_GATEWAY);
+	}
+
+}

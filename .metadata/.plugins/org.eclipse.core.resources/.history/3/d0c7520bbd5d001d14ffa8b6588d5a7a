@@ -1,0 +1,11 @@
+
+
+ Q1/- What is a Servlet ? What is the role of the DispatcherServlet in the Spring boot rest application.
+ 
+ Answer)  Servlet is used to create a web application. There are many interfaces and classes in the Servlet API such as Servlet, GenericServlet,
+          HttpServlet, ServletRequest, ServletResponse, etc. It is a web component that is deployed on the server to create a dynamic web page.
+	  
+		  The role of the DispatcherServlet in the Spring boot rest application is it receives all of the HTTP requests and delegates them to 
+		  controller classes. Spring Boot provides the spring-boot-starter-web library for developing web applications using Spring MVC. One of the 
+		  main features of Spring Boot is auto-configuration. The Spring Boot auto-configuration registers and configures the DispatcherServlet 
+		  automatically.

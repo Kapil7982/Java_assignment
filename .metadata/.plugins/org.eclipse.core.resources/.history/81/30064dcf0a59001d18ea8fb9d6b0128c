@@ -1,0 +1,21 @@
+package com.masai;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class Circle implements Drawshapes{
+
+	
+	void draw() {
+		
+		System.out.println("You have drawn Circle");
+	}
+
+	@Override
+	public void shapes() {
+		// TODO Auto-generated method stub
+		draw();
+	}
+	
+
+}

@@ -1,0 +1,50 @@
+ 
+ 
+ Q1. Explain the Entity class life-cycle.
+ 
+ Answer)  An entity obj has the 3 life-cycle state:-
+
+		1.new state/transient state :- if we create a object of persistence class and this class is not attached with the EM obj, then this stage is
+		                               6 known as new state/transient state.
+		                               
+		                        
+		
+		2.persistence state/managed state :- if a persistence class obj or Entity obj is associated with EM obj, then this obj will be in persistence
+		                                     state.when we call a persist(-) method by supplying Student entity obj then at time student obj will be 
+		                                     in persistence state.
+		                                     
+		                                     Or
+		                                     
+		                                     when we call find() method and this method returns the Student obj, then that obj will also be in 
+		                                     persistence state.
+		
+		3.detached state :- When we call  close() method   or call clear() method on the EM obj, then all the associated entity obj will be in 
+		                    detached state. In this stage the entity objs will not be in-sync with the table.
+	
+		
+		
+		
+	
+		
+	
+		
+		
+		
+		
+	
+		
+		
+		
+		
+		
+		
+				
+		
+		
+		
+		
+		
+		
+		
+		
+ 

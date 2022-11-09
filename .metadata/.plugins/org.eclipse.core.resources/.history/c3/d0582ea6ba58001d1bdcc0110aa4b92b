@@ -1,0 +1,44 @@
+package question1;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service("dP")
+public class DataDepend {
+
+	@Autowired
+	public List<String> cities;
+	
+	@Autowired
+	List<Student> students;
+	
+	@Autowired
+	Map<Student, String> theMap;
+	
+	public void representsData() {
+		
+		System.out.println("List of the citites :- ");
+		cities.forEach(c -> System.out.println(c));
+		
+		System.out.println("================================");
+		
+		System.out.println("List of the students :- ");
+		students.forEach(s -> System.out.println(s));
+		
+		System.out.println("==================================");
+		
+		System.out.println("List of theMap :- ");
+		
+		theMap.forEach((s,c)  -> {
+			
+			System.out.println( s + " :- "+ c);
+			
+			System.out.println("===============================");
+			
+			});
+		
+	}
+}

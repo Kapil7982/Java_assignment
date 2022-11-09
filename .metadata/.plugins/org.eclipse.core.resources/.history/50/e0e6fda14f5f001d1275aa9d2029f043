@@ -1,0 +1,5 @@
+package com.evaluationquesiton2.exception;
+
+public class AccountException {
+
+}

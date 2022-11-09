@@ -1,0 +1,9 @@
+package com.evaluation.question1.exception;
+
+public class EmployeeException extends Exception{
+
+	public EmployeeException() {
+		
+		super();
+	}
+}
